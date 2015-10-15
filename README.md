@@ -17,8 +17,8 @@ TODO Motivation
 ## Install Dotfiles
 
 1. `git clone https://github.com/pawel-szafran/dotfiles.git ~/Dev/dotfiles`
-1. `ln -s ~/Dev/dotfiles "${ZDOTDIR:-$HOME}/.dotfiles"`
-1. `source ${ZDOTDIR:-$HOME}/.dotfiles/install.zsh`
+1. `ln -s ~/Dev/dotfiles ~/.dotfiles`
+1. `source ~/.dotfiles/install.zsh`
 
 ## Update Dotfiles
 

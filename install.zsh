@@ -1,8 +1,7 @@
-ZHOME=${ZDOTDIR:-$HOME}
-DFDIR=$ZHOME/.dotfiles
+DFDIR=~/.dotfiles
 
 # Symlinks
 for file in $DFDIR/**/*.symlink
 do
-  ln -sf "${file}" "$ZHOME/.${file:t:r}"
+  ln -sf "${file}" "$HOME/.${file:t:r}"
 done
