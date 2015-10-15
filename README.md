@@ -22,4 +22,4 @@ TODO Motivation
 
 ## Update Dotfiles
 
-1. `dotfilesu`
+1. `dfu`
