@@ -2,13 +2,15 @@
 # Defines environment variables.
 #
 
+export DFDIR=~/.dotfiles
+
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-#
 # Env
-#
-
-# TODO Add env
+for file in $DFDIR/**/env.zsh
+do
+  source "$file"
+done
