@@ -13,6 +13,7 @@ TODO Motivation
 1. Install [Prezto](https://github.com/sorin-ionescu/prezto)
 1. `brew install tmux`
 1. Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+1. Map *Caps Lock* to *Control*
 
 ## Install Dotfiles
 
