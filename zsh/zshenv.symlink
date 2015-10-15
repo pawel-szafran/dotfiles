@@ -10,7 +10,7 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
 fi
 
 # Env
-for file in $DFDIR/**/env.zsh
+for file in $DFDIR/**/env.zsh(N)
 do
   source "$file"
 done
