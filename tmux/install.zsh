@@ -1,0 +1,1 @@
+symlink ".tmux.conf"
