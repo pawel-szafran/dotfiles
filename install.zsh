@@ -3,10 +3,17 @@ function symlink {
   ln -sf "$module_dir/$1" "$target_dir/$1"
 }
 
-for module_script in ~/.dotfiles/*/**/install.zsh(N); do
-  module_dir=${module_script:h}
-  source "$module_script"
+modules_to_install=(
+  zsh
+  tmux
+)
+for module in $modules_to_install; do
+  module_install_script="$HOME/.dotfiles/$module/install.zsh"
+  module_dir=${module_install_script:h}
+  source "$module_install_script"
+  unset module_install_script
   unset module_dir
 done
+unset modules_to_install
 
 unset -f symlink
