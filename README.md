@@ -2,7 +2,6 @@
 
 - These are my personal dotfiles for Mac OS X.
 - The goal is to be able to easily keep my dotfiles in sync between different Macs.
-- The goal is NOT to provide a single command that installs all the core terminal software I use, like iTerm or Homebrew, because I don't do that often, and I don't want to own their installation process, which might change over time.
 
 ## Get Started
 
