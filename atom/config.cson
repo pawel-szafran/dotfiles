@@ -1,0 +1,16 @@
+"*":
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    invisibles: {}
+    fontSize: 12
+  "go-plus":
+    lintOnSave: false
+  "git-plus": {}
+  "exception-reporting":
+    userId: "40deb184-7090-eeb6-752b-5c261c90bf3a"

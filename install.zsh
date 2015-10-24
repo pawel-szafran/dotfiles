@@ -7,6 +7,7 @@ modules_to_install=(
   zsh
   brew
   tmux
+  atom
 )
 for module in $modules_to_install; do
   module_install_script="$HOME/.dotfiles/$module/install.zsh"
