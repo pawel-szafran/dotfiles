@@ -10,6 +10,7 @@ symlink ".zpreztorc"
 symlink ".zprofile"
 symlink ".zshenv"
 symlink ".zshrc"
+symlink ".hushlogin"
 
 source ~/.zshenv
 source ~/.zprofile
