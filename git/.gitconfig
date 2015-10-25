@@ -1,0 +1,9 @@
+[user]
+	name = Pawel Szafran
+	email = pawel.szafran@gmail.com
+[core]
+	autocrlf = input
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true

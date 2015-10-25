@@ -7,6 +7,7 @@ function {
   local modules_to_install=(
     zsh
     brew
+    git
     go
     tmux
     atom
