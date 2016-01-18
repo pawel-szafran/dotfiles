@@ -18,4 +18,5 @@ function {
 symlink_dir="$HOME/.atom"
 symlink "config.cson"
 symlink "keymap.cson"
+symlink "snippets.cson"
 unset symlink_dir
