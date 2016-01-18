@@ -8,6 +8,7 @@
     ]
   editor:
     invisibles: {}
+    preferredLineLength: 100
     fontSize: 12
   "go-plus":
     lintOnSave: false
