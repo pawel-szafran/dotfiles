@@ -1,18 +1,19 @@
 "*":
-  welcome:
-    showOnStartup: false
+  "autocomplete-plus": {}
   core:
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
   editor:
+    fontSize: 12
     invisibles: {}
     preferredLineLength: 100
-    fontSize: 12
-  "go-plus":
-    lintOnSave: false
-  "git-plus": {}
   "exception-reporting":
     userId: "40deb184-7090-eeb6-752b-5c261c90bf3a"
+  "git-plus": {}
+  "go-plus":
+    lintOnSave: false
   "go-rename": {}
+  welcome:
+    showOnStartup: false
