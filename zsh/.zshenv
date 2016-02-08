@@ -14,3 +14,8 @@ for file in $DFDIR/**/env.zsh(N)
 do
   source "$file"
 done
+
+# Docker env
+if [ -s ~/.docker/env.zsh ]; then
+  source ~/.docker/env.zsh
+fi
