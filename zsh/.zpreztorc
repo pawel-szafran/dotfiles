@@ -19,14 +19,15 @@ zstyle ':prezto:load' pmodule \
   'terminal' \
   'editor' \
   'history' \
-  'history-substring-search' \
   'directory' \
   'spectrum' \
   'utility' \
   'git' \
   'homebrew' \
   'osx' \
+  'archive' \
   'completion' \
+  'history-substring-search' \
   'prompt'
 
 #
