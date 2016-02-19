@@ -26,8 +26,8 @@ zstyle ':prezto:load' pmodule \
   'homebrew' \
   'osx' \
   'archive' \
-  'completion' \
   'history-substring-search' \
+  'completion' \
   'prompt'
 
 #
