@@ -15,5 +15,10 @@
   "go-plus":
     lintOnSave: false
   "go-rename": {}
+  gofmt: {}
+  "gometalinter-linter": {}
+  linter: {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false

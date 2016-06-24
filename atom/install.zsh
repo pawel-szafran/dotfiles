@@ -5,7 +5,6 @@ function {
   local pkgs=(
     git-plus
     go-plus
-    go-rename
     language-docker
   )
   for pkg in $pkgs; do

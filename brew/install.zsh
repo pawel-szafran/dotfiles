@@ -6,8 +6,6 @@ function brew_install {
   brew_check $1 || brew install $1
 }
 
-brew_check brew-cask || brew install caskroom/cask/brew-cask
-
 function brew_cask_check {
   brew cask list -1 2>&1 | grep "^$1$" >& /dev/null
 }
