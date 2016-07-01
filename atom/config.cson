@@ -16,7 +16,18 @@
     lintOnSave: false
   "go-rename": {}
   gofmt: {}
-  "gometalinter-linter": {}
+  "gometalinter-linter":
+    args: [
+      "--vendor"
+      "--disable-all"
+      "--enable=vet"
+      "--enable=vetshadow"
+      "--enable=ineffassign"
+      "--enable=goconst"
+      "--tests"
+      "--json"
+      "."
+    ]
   linter: {}
   "tree-view":
     hideVcsIgnoredFiles: true
