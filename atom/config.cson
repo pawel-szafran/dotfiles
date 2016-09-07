@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    html:
+      indent_size: 2
   "autocomplete-plus": {}
   core:
     themes: [

@@ -6,6 +6,7 @@ function {
     git-plus
     go-plus
     language-docker
+    atom-beautify
   )
   for pkg in $pkgs; do
     if ! apm list -ib | grep "^$pkg@" >& /dev/null; then
