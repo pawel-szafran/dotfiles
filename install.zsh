@@ -12,6 +12,7 @@ function {
     go
     tmux
     atom
+    util
   )
   for module in $modules_to_install; do
     local module_install_script="$HOME/.dotfiles/$module/install.zsh"
