@@ -12,6 +12,7 @@ function {
     go
     tmux
     atom
+    cloud
     util
   )
   for module in $modules_to_install; do
