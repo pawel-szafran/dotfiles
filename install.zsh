@@ -16,6 +16,7 @@ function {
     util
   )
   for module in $modules_to_install; do
+    echo "→ Installing $module"
     local module_install_script="$HOME/.dotfiles/$module/install.zsh"
     local module_dir=${module_install_script:h}
     source $module_install_script
