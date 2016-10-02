@@ -1,7 +1,4 @@
-# My Personal Dotfiles
-
-- These are my personal dotfiles for Mac OS X.
-- The goal is to be able to easily keep them in sync between different Macs.
+# My personal Dotfiles for macOS
 
 ## Get Started
 

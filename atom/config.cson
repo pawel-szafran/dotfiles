@@ -17,6 +17,7 @@
   "git-plus": {}
   "go-plus":
     lintOnSave: false
+    panelDisplayMode: "closed"
   "go-rename": {}
   gofmt: {}
   "gometalinter-linter":
@@ -36,3 +37,6 @@
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+".diff":
+  editor:
+    preferredLineLength: 100

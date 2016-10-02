@@ -5,7 +5,7 @@ function symlink {
 
 function {
   local modules_to_install=(
-    osx
+    mac
     zsh
     brew
     git
