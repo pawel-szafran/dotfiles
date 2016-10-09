@@ -12,10 +12,12 @@
     fontSize: 12
     invisibles: {}
     preferredLineLength: 100
+    tabLength: 4
   "exception-reporting":
     userId: "40deb184-7090-eeb6-752b-5c261c90bf3a"
   "git-plus": {}
   "go-plus":
+    currentPanelHeight: "27.555816686251468vh"
     lintOnSave: false
     panelDisplayMode: "closed"
   "go-rename": {}

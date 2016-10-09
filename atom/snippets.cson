@@ -1,4 +1,11 @@
 '.source.go':
+  'main func':
+    'prefix': 'fm'
+    'body': """
+      func main() {
+        $0
+      }
+    """
   'test func':
     'prefix': 'ft'
     'body': """
@@ -13,6 +20,13 @@
       	for i := 0; i < b.N; i++ {
       		$0
       	}
+      }
+    """
+  'example func':
+    'prefix': 'fe'
+    'body': """
+      func Example$1() {
+      	$0
       }
     """
   'godebug breakpoint':
