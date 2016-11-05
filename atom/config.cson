@@ -4,6 +4,7 @@
       indent_size: 2
   "autocomplete-plus": {}
   core:
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
@@ -12,12 +13,11 @@
     fontSize: 12
     invisibles: {}
     preferredLineLength: 100
-    tabLength: 4
   "exception-reporting":
     userId: "40deb184-7090-eeb6-752b-5c261c90bf3a"
   "git-plus": {}
   "go-plus":
-    currentPanelHeight: "27.555816686251468vh"
+    currentPanelHeight: "26.263219741480608vh"
     lintOnSave: false
     panelDisplayMode: "closed"
   "go-rename": {}
@@ -35,6 +35,7 @@
       "."
     ]
   linter: {}
+  "tester-go": {}
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:
@@ -42,3 +43,6 @@
 ".diff":
   editor:
     preferredLineLength: 100
+".go.source":
+  editor:
+    tabLength: 4
