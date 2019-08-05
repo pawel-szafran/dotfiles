@@ -7,3 +7,6 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+
+[includeIf "gitdir:~/Work/Telnyx/projects/"]
+  path = ~/.gitconfig-telnyx

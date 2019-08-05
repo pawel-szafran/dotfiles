@@ -1,1 +1,0 @@
-symlink ".gitconfig"

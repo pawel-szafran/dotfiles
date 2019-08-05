@@ -1,0 +1,24 @@
+{
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "Solarized Dark",
+  "editor.renderIndentGuides": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "elixirLS.suggestSpecs": false,
+  "reason_language_server.format_width": 120,
+  "gitlens.blame.avatars": false,
+  "gitlens.currentLine.enabled": false,
+  "files.autoSave": "off",
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "FiraCode-Retina",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 11,
+  "files.exclude": {
+    "**/_build": true,
+    "**/.elixir_ls": true,
+    "**/cover": true,
+    "**/deps": true
+  },
+  "breadcrumbs.enabled": true
+}

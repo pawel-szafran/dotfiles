@@ -1,0 +1,19 @@
+[
+  {
+    "key": "alt+cmd+g",
+    "command": "editor.action.goToDeclaration",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "shift+escape",
+    "command": "workbench.action.closePanel"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.output.action.clearOutput"
+  },
+  {
+    "key": "shift+cmd+n",
+    "command": "explorer.newFile",
+  },
+]
