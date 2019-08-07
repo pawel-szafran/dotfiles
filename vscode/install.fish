@@ -1,6 +1,6 @@
 brew cask install visual-studio-code
 
-set vscode_config_dir /Users/szafa/Library/Application\ Support/Code/User
+set vscode_config_dir ~/Library/Application\ Support/Code/User
 symlink settings.json $vscode_config_dir
 symlink keybindings.json $vscode_config_dir
 set -e vscode_config_dir

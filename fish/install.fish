@@ -6,6 +6,5 @@ omf install chain
 omf theme chain
 
 omf install   \
-  vcs         \
   open_github \
   asdf

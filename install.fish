@@ -31,6 +31,6 @@ end
 
 set -e modules
 functions -e symlink
-cd -
+cd ~
 brew cleanup
 omf reload

@@ -1,3 +1,6 @@
+function fish_greeting
+end
+
 for configure_script in ~/.dotfiles/**/configure.fish
   source $configure_script
 end

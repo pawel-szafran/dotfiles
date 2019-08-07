@@ -10,6 +10,8 @@ brew install \
   forego
 
 brew cask install \
-  font-fira-code  \
   ngrok           \
   postman
+
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
