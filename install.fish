@@ -19,12 +19,15 @@ function symlink
     set target_dir $argv[2]
     mkdir -p $target_dir
   end
-  ln -sf $module_dir/$argv[1] $target_dir/$argv[1]
+  set orig $module_dir/$argv[1]
+  set slink $target_dir/$argv[1]
+  echo "Linking: $slink -> $orig" 
+  ln -sf $orig $slink
 end
 
 for module in $modules
   echo "→ Installing $module"
-  set module_dir ~/.dotfiles/$module
+  set -g module_dir ~/.dotfiles/$module
   source $module/install.fish
   set -e module_dir
 end
