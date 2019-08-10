@@ -8,3 +8,7 @@ end
 function dfu
   source ~/.dotfiles/install.fish
 end
+
+function mkdcd
+  mkdir -p $argv && cd $argv
+end
