@@ -1,5 +1,6 @@
 brew install \
   coreutils  \
+  gnu-sed    \
   tree       \
   telnet     \
              \
