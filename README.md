@@ -14,7 +14,3 @@
 ## Update Dotfiles
 
 - `dfu`
-
-# TODO
-
-- save new iTerm prefs with [Solarized Dark for iTerm2](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
