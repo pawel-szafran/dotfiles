@@ -8,3 +8,6 @@ omf theme chain
 omf install   \
   open_github \
   asdf
+
+asdf update
+asdf plugin-update --all
