@@ -6,6 +6,7 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Screenshots
+mkdir -p ~/Screenshots/
 defaults write com.apple.screencapture location -string "$HOME/Screenshots/"
 defaults write com.apple.screencapture disable-shadow -bool true
 
