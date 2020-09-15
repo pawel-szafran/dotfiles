@@ -1,9 +1,8 @@
 set modules  \
-  mac        \
   utils      \
   fish       \
   git        \
-  docker-k8s \
+  containers \
   iterm      \
   vscode
 

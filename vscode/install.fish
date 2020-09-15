@@ -10,15 +10,20 @@ set extensions                                \
   slevesque.vscode-multiclip                  \
   dbankier.vscode-quick-select                \
   ms-vsliveshare.vsliveshare                  \
+  stkb.rewrap                                 \
                                               \
   redhat.vscode-yaml                          \
   bungcip.better-toml                         \
+  fcrespo82.markdown-table-formatter          \
+                                              \
+  sibiraj-s.vscode-scss-formatter             \
                                               \
   skyapps.fish-vscode                         \
-  mikestead.dotenv                            \
                                               \
   JakeBecker.elixir-ls                        \
   pgourlain.erlang                            \
+                                              \
+  humao.rest-client                           \
                                               \
   ms-azuretools.vscode-docker                 \
   ms-kubernetes-tools.vscode-kubernetes-tools

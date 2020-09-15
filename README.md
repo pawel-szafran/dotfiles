@@ -9,6 +9,7 @@
 - `chsh -s /usr/local/bin/fish`
 - Install [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - `git clone git@github.com:pawel-szafran/dotfiles.git ~/.dotfiles`
+- `source ~/.dotfiles/mac/install.fish`
 - `source ~/.dotfiles/install.fish`
 
 ## Update Dotfiles

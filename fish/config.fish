@@ -16,3 +16,5 @@ end
 function gh
   github $argv
 end
+
+status --is-interactive; and source (jump shell fish | psub)
