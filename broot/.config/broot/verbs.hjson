@@ -1,0 +1,31 @@
+###############################################################
+# This file contains the verb definitions for broot
+#
+# Doc at https://dystroy.org/broot/verbs/
+###############################################################
+
+verbs: [
+
+    {
+        invocation: edit
+        shortcut: e
+        execution: "hx {file}:{line}"
+        leave_broot: false
+    }
+
+    {
+        invocation: create {subpath}
+        execution: "hx {directory}/{subpath}"
+        leave_broot: false
+    }
+
+    {
+        invocation: terminal
+        key: ctrl-t
+        execution: "$SHELL"
+        set_working_dir: true
+        leave_broot: false
+    }
+
+]
+

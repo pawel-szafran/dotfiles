@@ -1,0 +1,3 @@
+[[language]]
+name = "fish"
+indent = { tab-width = 2, unit = "  " }

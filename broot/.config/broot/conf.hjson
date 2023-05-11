@@ -1,0 +1,19 @@
+quit_on_last_cancel: true
+show_selection_mark: true
+content_search_max_file_size: 10MB
+max_panels_count: 2
+
+imports: [
+    verbs.hjson
+    {
+        luma: [
+            dark
+            unknown
+        ]
+        file: dark-blue-skin.hjson
+    }
+    {
+        luma: light
+        file: white-skin.hjson
+    }
+]

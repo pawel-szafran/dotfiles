@@ -2,16 +2,46 @@
 
 ## Install
 
-- Install [Homebrew](http://brew.sh/)
-- `brew install git`
-- `brew install fish`
-- `sudo sh -c 'echo /usr/local/bin/fish >> /etc/shells'`
-- `chsh -s /usr/local/bin/fish`
-- Install [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
-- `git clone git@github.com:pawel-szafran/dotfiles.git ~/.dotfiles`
-- `source ~/.dotfiles/mac/install.fish`
-- `source ~/.dotfiles/install.fish`
+Install [Homebrew](http://brew.sh/).
 
-## Update Dotfiles
+```console
+brew install git
+```
 
-- `dfu`
+```console
+git clone git@github.com:pawel-szafran/dotfiles.git && cd dotfiles
+```
+
+```console
+brew bundle
+```
+
+```console
+sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
+```
+
+```console
+chsh -s /opt/homebrew/bin/fish
+```
+
+Restart terminal.
+
+```console
+fish_add_path /opt/homebrew/bin/
+```
+
+Install [Fisher](https://github.com/jorgebucaran/fisher).
+
+```console
+source install.fish
+```
+
+```console
+tu
+```
+
+## Update terminal setup
+
+```console
+tu
+```

@@ -1,0 +1,21 @@
+[user]
+	name = Pawel Szafran
+	email = pawel.szafran@gmail.com
+	signingkey = 772532819C1203F4
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+	editor = hx
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+	process = git-lfs filter-process
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true

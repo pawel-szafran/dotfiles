@@ -1,0 +1,15 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - '#404c51'
+    selectedRangeBgColor:
+      - '#404c51'
+  showFileTree: false
+
+os:
+  edit: 'hx {{filename}}'
+  editAtLine: 'hx {{filename}}:{{line}}'
+  editAtLineAndWait: 'hx {{filename}}:{{line}}'
+  editInTerminal: true
+
+promptToReturnFromSubprocess: false
