@@ -31,6 +31,8 @@ function tu
     asdf global $plugin latest
   end
 
+  asdf reshim
+
   tu_log "Updating cargo"
   for pkg in amber
     cargo install $pkg
