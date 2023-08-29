@@ -14,6 +14,9 @@ select = "underline"
 [editor.indent-guides]
 render = true
 
+[keys.normal]
+"#" = "toggle_comments"
+
 [keys.normal.space]
 F = "file_picker_in_current_buffer_directory"
 space = ":fmt"
