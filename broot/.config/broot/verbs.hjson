@@ -9,21 +9,29 @@ verbs: [
     {
         invocation: edit
         shortcut: e
-        execution: "hx {file}:{line}"
+        external: "hx {file}:{line}"
         leave_broot: false
     }
 
     {
         invocation: create {subpath}
-        execution: "hx {directory}/{subpath}"
+        external: "hx {directory}/{subpath}"
         leave_broot: false
     }
 
     {
         invocation: terminal
         key: ctrl-t
-        execution: "$SHELL"
+        external: "$SHELL"
         set_working_dir: true
+        leave_broot: false
+    }
+
+    {
+        invocation: rename {new_filename:file-name}
+        key: ctrl-r
+        external: mv {file} {parent}/{new_filename}
+        auto_exec: false
         leave_broot: false
     }
 
