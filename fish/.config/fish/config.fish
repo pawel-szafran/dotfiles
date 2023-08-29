@@ -33,6 +33,9 @@ if status is-interactive
   set hydro_multiline true
   set hydro_color_prompt '#b58900'
 
+  # Vi mode
+  fish_vi_key_bindings
+
   # asdf
   source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
