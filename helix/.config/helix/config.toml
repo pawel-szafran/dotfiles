@@ -21,3 +21,14 @@ render = true
 F = "file_picker_in_current_buffer_directory"
 space = ":fmt"
 ret = ":w!"
+
+[keys.normal.space.x]
+p = ":pipe ex_s ip"
+o = ":pipe ex_cm oneline"
+
+[keys.normal.space.x.i]
+i = ":pipe ex_s i"
+p = ":pipe ex_s ip"
+f = ":pipe ex_s if"
+r = ":pipe ex_s ifr"
+
