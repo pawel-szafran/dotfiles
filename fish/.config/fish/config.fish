@@ -28,13 +28,12 @@ alias lg='lazygit'
 ##
 
 if status is-interactive
-
   # Prompt
   set hydro_multiline true
   set hydro_color_prompt '#b58900'
 
-  # Vi mode
-  fish_vi_key_bindings
+  # bindings
+  fish_default_key_bindings
 
   # rtx
   rtx activate fish | source
