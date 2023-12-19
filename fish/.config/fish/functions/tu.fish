@@ -31,7 +31,7 @@ function tu
   end
 
   tu_log "Updating cargo"
-  for pkg in amber
+  for pkg in amber ccase
     cargo install $pkg
   end
 
