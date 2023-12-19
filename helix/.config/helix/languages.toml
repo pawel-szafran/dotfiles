@@ -1,3 +1,15 @@
+[language-server]
+lexical = { command = "/Users/pawel/projects/elixir/lexical/_build/dev/package/lexical/bin/start_lexical.sh" }
+
+[[language]]
+name = "elixir"
+language-servers = [ "lexical" ]
+
+[[language]]
+name = "heex"
+language-servers = [ "lexical" ]
+
 [[language]]
 name = "fish"
 indent = { tab-width = 2, unit = "  " }
+
