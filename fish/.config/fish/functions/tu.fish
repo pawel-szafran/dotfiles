@@ -21,17 +21,14 @@ function tu
   brew autoremove
   brew cleanup
 
-  tu_log "Updating asdf"
+  tu_log "Updating rtx"
 
-  asdf plugin update --all
+  rtx plugins update
 
-  for plugin in erlang elixir rust nodejs yarn python
-    asdf plugin add $plugin
-    asdf install $plugin latest
-    asdf global $plugin latest
+  for tool in erlang elixir rust go node python
+    rtx install -y {$tool}@latest
+    rtx use -g --pin {$tool}@latest
   end
-
-  asdf reshim
 
   tu_log "Updating cargo"
   for pkg in amber

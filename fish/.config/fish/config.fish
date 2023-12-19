@@ -36,8 +36,8 @@ if status is-interactive
   # Vi mode
   fish_vi_key_bindings
 
-  # asdf
-  source /opt/homebrew/opt/asdf/libexec/asdf.fish
+  # rtx
+  rtx activate fish | source
 
   # direnv
   direnv hook fish | source
