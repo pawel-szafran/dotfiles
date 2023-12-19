@@ -23,12 +23,16 @@ space = ":fmt"
 ret = ":w!"
 
 [keys.normal.space.x]
-p = ":pipe ex_s ip"
-o = ":pipe ex_cm oneline"
+i = ":pipe ex_s ip"
 
-[keys.normal.space.x.i]
+[keys.normal.space.x.I]
 i = ":pipe ex_s i"
 p = ":pipe ex_s ip"
 f = ":pipe ex_s if"
 r = ":pipe ex_s ifr"
 
+[keys.normal.space.x.c]
+s = ":pipe ccase -t snake | tr -d '\n'"
+c = ":pipe ccase -t camel | tr -d '\n'"
+k = ":pipe ccase -t kebab | tr -d '\n'"
+t = ":pipe ccase -t title | tr -d '\n'"
