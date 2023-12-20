@@ -1,7 +1,7 @@
 [user]
 	name = Pawel Szafran
 	email = pawel.szafran@gmail.com
-	signingkey = 772532819C1203F4
+	signingkey = 7C98E56D63D294D4
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore
