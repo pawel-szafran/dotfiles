@@ -11,7 +11,7 @@ function tu
 
   for pkg in stow fish kitty git helix direnv lazygit broot
     tu_log "Symlinking $pkg"
-    stow -v -t $HOME --dotfiles $pkg
+    stow -v -t $HOME --no-folding --dotfiles $pkg
   end
 
   tu_log "Updating brew"
