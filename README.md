@@ -27,7 +27,7 @@ chsh -s /opt/homebrew/bin/fish
 Restart terminal.
 
 ```console
-fish_add_path /opt/homebrew/bin/
+fish_add_path -U /opt/homebrew/bin/
 ```
 
 Install [Fisher](https://github.com/jorgebucaran/fisher).
