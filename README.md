@@ -9,7 +9,7 @@ brew install git
 ```
 
 ```console
-git clone git@github.com:pawel-szafran/dotfiles.git && cd dotfiles
+git clone https://github.com/pawel-szafran/dotfiles.git && cd dotfiles
 ```
 
 ```console
