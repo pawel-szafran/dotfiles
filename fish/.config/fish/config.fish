@@ -9,6 +9,12 @@ set -gx BAT_THEME 'ansi'
 set -gx ERL_AFLAGS '-kernel shell_history enabled'
 
 ##
+## Path
+##
+
+fish_add_path ~/.cargo/bin
+
+##
 ## Aliases
 ##
 
@@ -28,7 +34,7 @@ alias lg='lazygit'
 ##
 
 if status is-interactive
-  # Prompt
+  # prompt
   set hydro_multiline true
   set hydro_color_prompt '#b58900'
 
