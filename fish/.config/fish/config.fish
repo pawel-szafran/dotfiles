@@ -12,11 +12,11 @@ set -gx ERL_AFLAGS '-kernel shell_history enabled'
 ## Aliases
 ##
 
-# Change `ls` to `exa`
-alias ls='exa --color=always --group-directories-first --icons'
-alias ll='exa -l --color=always --group-directories-first --icons'
+# Change `ls` to `eza`
+alias ls='eza --color=always --group-directories-first --icons'
+alias ll='eza -l --color=always --group-directories-first --icons'
 alias la='ll -a'
-alias lt='exa -T --color=always --group-directories-first --icons'
+alias lt='eza -T --color=always --group-directories-first --icons'
 alias lta='lt -a'
 
 alias j='z'
