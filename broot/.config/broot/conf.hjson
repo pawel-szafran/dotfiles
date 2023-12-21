@@ -10,10 +10,10 @@ imports: [
             dark
             unknown
         ]
-        file: dark-blue-skin.hjson
+        file: skins/dark-blue.hjson
     }
     {
         luma: light
-        file: white-skin.hjson
+        file: skins/white.hjson
     }
 ]
