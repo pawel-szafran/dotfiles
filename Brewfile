@@ -31,7 +31,7 @@ brew "fd"
 brew "broot"
 brew "sd"
 brew "ouch"
-brew "lazygit"
+brew "lazygit", args: ["HEAD"]
 brew "procs"
 brew "bat"
 brew "xh"
