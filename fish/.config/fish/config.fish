@@ -41,8 +41,8 @@ if status is-interactive
   # bindings
   fish_default_key_bindings
 
-  # rtx
-  rtx activate fish | source
+  # mise
+  mise activate fish | source
 
   # direnv
   direnv hook fish | source

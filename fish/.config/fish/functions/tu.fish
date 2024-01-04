@@ -21,13 +21,13 @@ function tu
   brew autoremove
   brew cleanup
 
-  tu_log "Updating rtx"
+  tu_log "Updating mise"
 
-  rtx plugins update
+  mise plugins update
 
   for tool in erlang elixir rust go node python
-    rtx install -y {$tool}@latest
-    rtx use -g --pin {$tool}@latest
+    mise install -y {$tool}@latest
+    mise use -g --pin {$tool}@latest
   end
 
   tu_log "Updating cargo"

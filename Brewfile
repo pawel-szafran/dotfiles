@@ -22,7 +22,7 @@ brew "parallel"
 brew "wget"
 
 # Modern tools
-brew "rtx"
+brew "mise"
 brew "direnv"
 brew "tealdeer"
 brew "ripgrep"
