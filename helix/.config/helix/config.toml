@@ -5,6 +5,7 @@ line-number = "relative"
 shell = ["fish", "-c"]
 idle-timeout = 100
 color-modes = true
+insert-final-newline = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -13,6 +14,9 @@ select = "underline"
 
 [editor.indent-guides]
 render = true
+
+[editor.smart-tab]
+supersede-menu = true
 
 [keys.normal]
 "#" = "toggle_comments"
@@ -24,6 +28,7 @@ ret = ":w!"
 
 [keys.normal.space.x]
 i = ":pipe ex_s ip"
+f = [":pipe mix format", ":reload"] # Until Lexical formats H sigils
 
 [keys.normal.space.x.I]
 i = ":pipe ex_s i"
