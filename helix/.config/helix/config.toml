@@ -18,6 +18,9 @@ render = true
 [editor.smart-tab]
 supersede-menu = true
 
+[editor.soft-wrap]
+enable = true
+
 [keys.normal]
 "#" = "toggle_comments"
 
