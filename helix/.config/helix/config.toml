@@ -33,7 +33,8 @@ ret = ":w!"
 
 [keys.normal.space.x]
 i = ":pipe ex_s ip"
-f = [":pipe mix format", ":reload"] # Until Lexical formats H sigils
+t = ":sh ex_test %{filename}:%{linenumber}"
+f = [":pipe-to mix format %{filename}", ":rl"] # Until Lexical formats H sigils
 
 [keys.normal.space.x.I]
 i = ":pipe ex_s i"
