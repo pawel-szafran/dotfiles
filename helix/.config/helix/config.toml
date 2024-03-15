@@ -23,6 +23,8 @@ enable = true
 
 [keys.normal]
 "#" = "toggle_comments"
+tab = "move_parent_node_end"
+S-tab = "move_parent_node_start"
 
 [keys.normal.space]
 F = "file_picker_in_current_buffer_directory"
@@ -44,3 +46,10 @@ s = ":pipe ccase -t snake | tr -d '\n'"
 c = ":pipe ccase -t camel | tr -d '\n'"
 k = ":pipe ccase -t kebab | tr -d '\n'"
 t = ":pipe ccase -t title | tr -d '\n'"
+
+[keys.insert]
+S-tab = "move_parent_node_start"
+
+[keys.select]
+tab = "extend_parent_node_end"
+S-tab = "extend_parent_node_start"
