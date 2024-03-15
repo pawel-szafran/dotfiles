@@ -1,15 +1,11 @@
 [language-server]
 lexical = { command = "/Users/pawel/projects/elixir/lexical/_build/dev/package/lexical/bin/start_lexical.sh" }
+nextls = { command = "/opt/homebrew/bin/nextls", args = [ "--stdio=true" ] }
 
 [[language]]
 name = "elixir"
-language-servers = [ "lexical" ]
+language-servers = [ "lexical", "nextls" ]
 
 [[language]]
 name = "heex"
-language-servers = [ "lexical" ]
-
-[[language]]
-name = "fish"
-indent = { tab-width = 2, unit = "  " }
-
+language-servers = [ "lexical", "nextls" ]
