@@ -2,8 +2,8 @@
 ## Env vars
 ##
 
-set -gx EDITOR 'hx'
-set -gx BAT_THEME 'ansi'
+set -gx EDITOR hx
+set -gx BAT_THEME ansi
 
 # Elixir
 set -gx ERL_AFLAGS '-kernel shell_history enabled'
@@ -34,18 +34,18 @@ alias lg='lazygit'
 ##
 
 if status is-interactive
-  # prompt
-  set hydro_multiline true
-  set hydro_color_prompt '#b58900'
+    # prompt
+    set hydro_multiline true
+    set hydro_color_prompt '#b58900'
 
-  # bindings
-  fish_default_key_bindings
+    # bindings
+    fish_default_key_bindings
 
-  # mise
-  mise activate fish | source
+    # mise
+    mise activate fish | source
 
-  # direnv
-  direnv hook fish | source
+    # direnv
+    direnv hook fish | source
 end
 
 ##
@@ -53,5 +53,5 @@ end
 ##
 
 if test -e ~/.config/fish/work.fish
-  source ~/.config/fish/work.fish
+    source ~/.config/fish/work.fish
 end
