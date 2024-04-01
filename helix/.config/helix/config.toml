@@ -6,6 +6,7 @@ shell = ["fish", "-c"]
 idle-timeout = 100
 color-modes = true
 insert-final-newline = true
+jump-label-alphabet = "fjdkslaruvmeicwox"
 
 [editor.cursor-shape]
 insert = "bar"
