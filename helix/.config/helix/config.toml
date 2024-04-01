@@ -1,6 +1,7 @@
 theme = "everforest_dark"
 
 [editor]
+scroll-lines = 1
 shell = ["fish", "-c"]
 idle-timeout = 100
 color-modes = true
