@@ -35,6 +35,7 @@ ret = ":w!"
 i = ":pipe ex_s ip"
 t = ":sh ex_test %{filename}:%{linenumber}"
 f = [":pipe-to mix format %{filename}", ":rl"] # Until Lexical formats H sigils
+g = ":sh gh_browse %{filename}:%{linenumber}"
 
 [keys.normal.space.x.I]
 i = ":pipe ex_s i"
