@@ -1,7 +1,6 @@
 theme = "everforest_dark"
 
 [editor]
-line-number = "relative"
 shell = ["fish", "-c"]
 idle-timeout = 100
 color-modes = true
