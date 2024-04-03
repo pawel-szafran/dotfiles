@@ -2,7 +2,7 @@
 ## Elixir: run test
 ##
 
-function ex_test
+function hx_ex_test
     set -f project (path basename (pwd))
 
     set -f file (string replace "$PWD/" '' $argv[1])

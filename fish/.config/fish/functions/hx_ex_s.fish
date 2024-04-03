@@ -2,7 +2,7 @@
 ## Elixir: snippets
 ##
 
-function ex_s
+function hx_ex_s
     switch $argv[1]
         case i
             while read -l line

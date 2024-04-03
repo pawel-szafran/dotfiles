@@ -33,16 +33,16 @@ space = ":fmt"
 ret = ":w!"
 
 [keys.normal.space.x]
-i = ":pipe ex_s ip"
-t = ":sh ex_test %{filename}:%{linenumber}"
+i = ":pipe hx_ex_s ip"
+t = ":sh hx_ex_test %{filename}:%{linenumber}"
 f = [":pipe-to mix format %{filename}", ":rl"] # Until Lexical formats H sigils
-g = ":sh gh_browse %{filename}:%{linenumber}"
+g = ":sh hx_gh_browse %{filename}:%{linenumber}"
 
 [keys.normal.space.x.I]
-i = ":pipe ex_s i"
-p = ":pipe ex_s ip"
-f = ":pipe ex_s if"
-r = ":pipe ex_s ifr"
+i = ":pipe hx_ex_s i"
+p = ":pipe hx_ex_s ip"
+f = ":pipe hx_ex_s if"
+r = ":pipe hx_ex_s ifr"
 
 [keys.normal.space.x.c]
 s = ":pipe ccase -t snake | tr -d '\n'"
