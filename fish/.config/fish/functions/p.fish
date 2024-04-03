@@ -7,14 +7,11 @@ function p
         j $argv[1]
     end
 
-    set -f dir (pwd)
-    set -f project (path basename $dir)
+    set -f project (path basename (pwd))
 
     kitten @ set-window-title $project.lg
-    kitten @ launch --cwd $dir --type window --window-title $project.test --dont-take-focus --no-response
-    kitten @ launch --cwd $dir --type window --window-title $project.hx --dont-take-focus --no-response
-
-    kitten @ send-text --match "title:^$project.hx\$" "hx .\n"
+    kitten @ launch --type window --window-title $project.test --cwd current --dont-take-focus --no-response --copy-env
+    kitten @ launch --type window --window-title $project.hx --cwd current --dont-take-focus --no-response --copy-env fish -C 'hx .'
 
     lg
 end
