@@ -4,5 +4,6 @@
 
 function hx_gh_browse
     set -f file (string replace "$PWD/" '' $argv[1])
-    gh browse $file
+    set -f branch (git rev-parse --abbrev-ref HEAD)
+    gh browse -b $branch $file
 end
