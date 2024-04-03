@@ -12,7 +12,7 @@ set -gx ERL_AFLAGS '-kernel shell_history enabled'
 ## Path
 ##
 
-fish_add_path ~/.cargo/bin
+fish_add_path ~/.local/share/mise/installs/rust/(mise current -C ~ rust)/bin
 
 ##
 ## Aliases
