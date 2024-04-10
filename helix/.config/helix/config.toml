@@ -23,7 +23,6 @@ supersede-menu = true
 enable = true
 
 [keys.normal]
-"#" = "toggle_comments"
 tab = "move_parent_node_end"
 S-tab = "move_parent_node_start"
 
