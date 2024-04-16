@@ -3,16 +3,9 @@
 ##
 
 function tu
+    tu_sym
+
     cd $DOTFILES_DIR
-
-    function tu_log
-        echo (set_color blue)"=>" $argv[1](set_color normal)
-    end
-
-    for pkg in stow fish kitty git helix direnv lazygit broot
-        tu_log "Symlinking $pkg"
-        stow -v -t $HOME --no-folding --dotfiles $pkg
-    end
 
     tu_log "Updating brew"
     brew update
@@ -41,7 +34,6 @@ function tu
     tu_log "Updating fisher"
     fisher update
 
-    functions -e tu_log
     cd -
     exec fish
 end
