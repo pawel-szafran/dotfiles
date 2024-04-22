@@ -22,6 +22,9 @@ supersede-menu = true
 [editor.soft-wrap]
 enable = true
 
+[editor.gutters]
+layout = ["diagnostics", "spacer", "diff"]
+
 [keys.normal]
 tab = "move_parent_node_end"
 S-tab = "move_parent_node_start"
