@@ -18,7 +18,7 @@ function tu
 
     mise plugins update
 
-    for tool in erlang elixir rust go node python
+    for tool in erlang elixir rust go node python lua-language-server
         mise install -y {$tool}@latest
         mise use -g --pin {$tool}@latest
     end
