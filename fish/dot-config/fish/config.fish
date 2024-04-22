@@ -46,6 +46,12 @@ if status is-interactive
 
     # direnv
     direnv hook fish | source
+
+    # fzf
+    fzf --fish | source
+    set -gx FZF_DEFAULT_COMMAND fd
+    set -gx FZF_CTRL_T_COMMAND fd
+    set -gx FZF_DEFAULT_OPTS '-m --reverse'
 end
 
 ##
