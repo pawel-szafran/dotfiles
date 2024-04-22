@@ -35,7 +35,11 @@ ret = ":w!"
 i = ":pipe hx_ex_s ip"
 t = ":sh hx_ex_test %{filename}:%{linenumber}"
 space = ":sh hx_br"
+
+[keys.normal.space.x.g]
+o = ":sh gh repo view --web"
 g = ":sh hx_gh_browse %{filename}:%{linenumber}"
+G = ":sh hx_gh_browse %{filename}:%{linenumber} master"
 
 [keys.normal.space.x.I]
 i = ":pipe hx_ex_s i"
