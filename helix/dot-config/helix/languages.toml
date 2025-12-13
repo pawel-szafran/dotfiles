@@ -1,14 +1,14 @@
 [language-server]
-lexical = { command = "/Users/pawel/projects/elixir/lexical/_build/dev/package/lexical/bin/start_lexical.sh" }
+expert = { command = "/Users/pawel/projects/elixir/expert/apps/expert/burrito_out/expert_darwin_arm64", args = ["--stdio"] }
 
 [[language]]
 name = "elixir"
-language-servers = [ "lexical" ]
+language-servers = [ "expert" ]
 text-width = 100
 
 [[language]]
 name = "heex"
-language-servers = [ "lexical" ]
+language-servers = [ "expert" ]
 text-width = 100
 
 [[language]]

@@ -1,0 +1,29 @@
+shell-integration = fish
+link-url = true
+maximize = true
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+
+# Everforest Dark/Medium - inline until Ghostty gets an official theme
+# Source: https://gist.github.com/sainnhe/6432f83181c4520ea87b5211fed27950
+background = #2d353b
+foreground = #d3c6aa
+cursor-color = #d3c6aa
+selection-background = #543a48
+selection-foreground = #d3c6aa
+palette = 0=#475258
+palette = 1=#e67e80
+palette = 2=#a7c080
+palette = 3=#dbbc7f
+palette = 4=#7fbbb3
+palette = 5=#d699b6
+palette = 6=#83c092
+palette = 7=#d3c6aa
+palette = 8=#475258
+palette = 9=#e67e80
+palette = 10=#a7c080
+palette = 11=#dbbc7f
+palette = 12=#7fbbb3
+palette = 13=#d699b6
+palette = 14=#83c092
+palette = 15=#d3c6aa

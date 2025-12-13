@@ -3,5 +3,5 @@
 ##
 
 function t
-    wezterm cli set-tab-title $argv[1]
+    zellij action rename-tab $argv[1]
 end

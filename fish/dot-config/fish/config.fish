@@ -13,8 +13,7 @@ set -gx ERL_AFLAGS '-kernel shell_history enabled'
 ##
 
 fish_add_path ~/.local/bin
-fish_add_path ~/.local/share/mise/installs/rust/(mise current -C ~ rust)/bin
-fish_add_path ~/.local/share/mise/installs/node/(mise current -C ~ node)/bin
+fish_add_path -P ~/.local/share/mise/installs/rust/(mise current -C ~ rust)/bin
 
 ##
 ## Aliases
@@ -28,10 +27,10 @@ alias lt='eza -T --color=always --group-directories-first --icons'
 alias lta='lt -a'
 
 alias top='btop'
-alias g='lazygit'
-alias d='lazydocker'
+alias lzg='lazygit'
+alias lzd='lazydocker'
 alias j='just'
-alias c='pt c; claude'
+alias zj='zellij'
 
 ##
 ## Config
@@ -59,6 +58,11 @@ if status is-interactive
 
     # zoxide
     zoxide init fish | source
+
+    # zellij
+    if not set -q ZELLIJ
+        exec zellij
+    end
 
     # fzf
     fzf --fish | source

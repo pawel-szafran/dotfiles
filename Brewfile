@@ -53,13 +53,18 @@ brew "zoxide"
 
 # Editor
 brew "helix", args: ["HEAD"]
+brew "zellij"
 brew "dprint"
 brew "marksman"
 brew "superhtml"
 brew "vscode-langservers-extracted"
 
 # Apps
+cask "ghostty"
 cask "docker-desktop"
 cask "imageoptim"
 cask "tableplus"
-cask "wezterm@nightly"
+
+# AI
+cask "claude-code"
+cask "droid"

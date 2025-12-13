@@ -18,7 +18,7 @@ function tu
 
     mise plugins update
 
-    for tool in erlang rust go node python lua-language-server
+    for tool in erlang rust go node python lua-language-server zig
         mise install -y {$tool}@latest
         mise use -g --pin {$tool}@latest
     end

@@ -45,7 +45,8 @@ E = 'extend_next_sub_word_end'
 
 [keys.normal.space]
 F = "file_picker_in_current_buffer_directory"
-t = ":sh hx_wt term"
+t = ":sh zellij run -cf --width 80%% --height 80%% -x 10%% -y 10%% -- fish"
+T = ":sh zellij run -cf --width 80%% --height 80%% -x 10%% -y 10%% --cwd %sh{path dirname %{file_path_absolute}} -- fish"
 space = ":fmt"
 ret = ":w!"
 q = ":wqa"
@@ -53,13 +54,18 @@ Q = ":qa!"
 
 # Coding
 [keys.normal.space.x]
-f = ":sh hx_wt f"
-F = ":sh hx_wt F %sh{path dirname %{buffer_name}}"
-space = ":sh hx_wt lg"
+f = ":sh zellij run -cf --width 80%% --height 80%% -x 10%% -y 10%% -- yazi %sh{pwd}"
+F = ":sh zellij run -cf --width 80%% --height 80%% -x 10%% -y 10%% -- yazi %sh{path dirname %{file_path_absolute}}"
 o = "@:o <C-r>%<C-w>"
 O = "@:o <C-r>%<backspace><backspace><backspace>/"
 m = "@:move <C-r>%"
 d = [":sh rm %{buffer_name}", ":buffer-close!"]
+r = [
+    ":write-all",
+    ":insert-output scooter --no-stdin >/dev/tty",
+    ":redraw",
+    ":reload-all"
+]
 
 # Git
 [keys.normal.space.x.g]
@@ -82,8 +88,9 @@ t = ':pipe ccase -t title | tr -d "\n"'
 
 # Test
 [keys.normal.space.x.t]
-t = ":sh hx_wt test %{filename}:%{linenumber}"
-f = ":sh hx_wt test %{filename}"
+i = ":sh hx_zellij test_iex"
+t = ":sh hx_zellij test %{buffer_name}:%{cursor_line}"
+f = ":sh hx_zellij test %{buffer_name}"
 
 # Elixir
 [keys.normal.space.x.x]
