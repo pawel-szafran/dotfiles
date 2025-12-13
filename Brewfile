@@ -1,48 +1,65 @@
-# Font
-tap "homebrew/cask-fonts"
-cask "font-fira-code-nerd-font"
-
-# Git
-brew "git"
-
-# Shell
+# Shells
 brew "fish"
 brew "bash"
 
-# Manage dotfiles
+# Core
+brew "git"
 brew "stow"
 
 # Classic tools
+brew "coreutils"
+brew "direnv"
+brew "expect"
 brew "make"
 brew "nmap"
+brew "parallel"
 brew "socat"
 brew "telnet"
 brew "watch"
-brew "parallel"
 brew "wget"
 
 # Modern tools
-brew "mise"
-brew "direnv"
-brew "tealdeer"
-brew "ripgrep"
-brew "fzf"
+brew "age"
+brew "btop"
+brew "csview"
+brew "duckdb"
 brew "eza"
 brew "fd"
-brew "broot"
-brew "sd"
-brew "ouch"
-brew "lazygit", args: ["HEAD"]
-brew "procs"
-brew "bat"
-brew "xh"
+brew "fzf"
 brew "git-delta"
+brew "glow"
+brew "hck"
+brew "hwatch"
+brew "imagemagick"
+brew "jo"
+brew "jq"
+brew "lazygit", args: ["HEAD"]
+brew "mise"
+brew "ouch"
+brew "poppler"
+brew "procs"
+brew "resvg"
+brew "ripgrep"
+brew "scooter"
+brew "sd"
+brew "slides", args: ["HEAD"]
 brew "tokei"
+brew "trivy"
+brew "xh"
+brew "yazi"
+brew "yt-dlp"
+brew "zet"
+brew "zoxide"
 
 # Editor
 brew "helix", args: ["HEAD"]
+brew "dprint"
+brew "marksman"
+brew "superhtml"
+brew "vscode-langservers-extracted"
 
 # Apps
-cask "kitty"
-cask "docker"
+cask "docker-desktop"
+cask "imageoptim"
 cask "tableplus"
+cask "wezterm@nightly"

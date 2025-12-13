@@ -1,12 +1,13 @@
 theme = "everforest_dark"
 
 [editor]
-scroll-lines = 1
 shell = ["fish", "-c"]
-idle-timeout = 100
+idle-timeout = 200
 color-modes = true
 insert-final-newline = true
 jump-label-alphabet = "fjdkslaruvmeicwox"
+trim-final-newlines = true
+trim-trailing-whitespace = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -28,33 +29,9 @@ layout = ["diagnostics", "spacer", "diff"]
 [keys.normal]
 tab = "move_parent_node_end"
 S-tab = "move_parent_node_start"
-
-[keys.normal.space]
-F = "file_picker_in_current_buffer_directory"
-space = ":fmt"
-ret = ":w!"
-
-[keys.normal.space.x]
-i = ":pipe hx_ex_s ip"
-t = ":sh hx_ex_test %{filename}:%{linenumber}"
-space = ":sh hx_br"
-
-[keys.normal.space.x.g]
-o = ":sh gh repo view --web"
-g = ":sh hx_gh_browse %{filename}:%{linenumber}"
-G = ":sh hx_gh_browse %{filename}:%{linenumber} master"
-
-[keys.normal.space.x.I]
-i = ":pipe hx_ex_s i"
-p = ":pipe hx_ex_s ip"
-f = ":pipe hx_ex_s if"
-r = ":pipe hx_ex_s ifr"
-
-[keys.normal.space.x.c]
-s = ':pipe ccase -t snake | tr -d "\n"'
-c = ':pipe ccase -t camel | tr -d "\n"'
-k = ':pipe ccase -t kebab | tr -d "\n"'
-t = ':pipe ccase -t title | tr -d "\n"'
+W = 'move_next_sub_word_start'
+B = 'move_prev_sub_word_start'
+E = 'move_next_sub_word_end'
 
 [keys.insert]
 S-tab = "move_parent_node_start"
@@ -62,3 +39,69 @@ S-tab = "move_parent_node_start"
 [keys.select]
 tab = "extend_parent_node_end"
 S-tab = "extend_parent_node_start"
+W = 'extend_next_sub_word_start'
+B = 'extend_prev_sub_word_start'
+E = 'extend_next_sub_word_end'
+
+[keys.normal.space]
+F = "file_picker_in_current_buffer_directory"
+t = ":sh hx_wt term"
+space = ":fmt"
+ret = ":w!"
+q = ":wqa"
+Q = ":qa!"
+
+# Coding
+[keys.normal.space.x]
+f = ":sh hx_wt f"
+F = ":sh hx_wt F %sh{path dirname %{buffer_name}}"
+space = ":sh hx_wt lg"
+o = "@:o <C-r>%<C-w>"
+O = "@:o <C-r>%<backspace><backspace><backspace>/"
+m = "@:move <C-r>%"
+d = [":sh rm %{buffer_name}", ":buffer-close!"]
+
+# Git
+[keys.normal.space.x.g]
+h = ":noop %sh{gh repo view --web}"
+m = ":noop %sh{gh browse %{buffer_name}:%{cursor_line}}"
+M = ":echo %sh{gh browse %{buffer_name}:%{cursor_line} -n | pbcopy; pbpaste}"
+b = ":noop %sh{gh browse %{buffer_name}:%{cursor_line} -b=%sh{git rev-parse --abbrev-ref HEAD}}"
+B = ":echo %sh{gh browse %{buffer_name}:%{cursor_line} -b=%sh{git rev-parse --abbrev-ref HEAD} -n | pbcopy; pbpaste}"
+c = ":noop %sh{gh browse %{buffer_name}:%{cursor_line} -c=%sh{git rev-parse HEAD}}"
+C = ":echo %sh{gh browse %{buffer_name}:%{cursor_line} -c=%sh{git rev-parse HEAD} -n | pbcopy; pbpaste}"
+a = ":echo %sh{git blame -p -w -M -L %{cursor_line},%{cursor_line} %{buffer_name} | rg 'author ' | sd 'author ' ''}"
+A = ":echo %sh{git blame -p -w -M %{buffer_name} | rg 'author ' | sd 'author ' '' | sort | uniq -c | sort -rn | sd '\n\\W+' ' | '}"
+
+# Casing
+[keys.normal.space.x.c]
+s = ':pipe ccase -t snake | tr -d "\n"'
+c = ':pipe ccase -t camel | tr -d "\n"'
+k = ':pipe ccase -t kebab | tr -d "\n"'
+t = ':pipe ccase -t title | tr -d "\n"'
+
+# Test
+[keys.normal.space.x.t]
+t = ":sh hx_wt test %{filename}:%{linenumber}"
+f = ":sh hx_wt test %{filename}"
+
+# Elixir
+[keys.normal.space.x.x]
+m = '@mi{S, <ret>:sort<ret>,gl' # sort modules
+s = '@s\w+:<ret>vh<esc>ms"lc =<gt><esc>,gs' # atom keys to strings
+a = '@s"\w+" =<gt><ret>4hmd"lv2l<esc>c:<esc>,gs' # string keys to atoms
+d = '@gs/ do$<ret>c, do:<esc>Jjxdk:format<ret>' # single-line do
+D = '@gs/, do: <ret>c do<ret><esc>oend<esc>:format<ret>' # multi-line do
+w = '@gsecwith<esc>gsj/ -<gt><ret>dhvgsdkf pa <lt>- <esc>gs:format<ret>' # case to with
+c = '@gseccase<esc>/ <lt>- <ret>dh<A-o>do<esc>Pa -<gt> <esc>Jkgs:format<ret>' # with to case
+p = '@gsf(;<A-n>d<A-p><A-p>i|<gt> <esc>3hPa <esc>x_|sd -F "(," "("<ret>gs:format<ret>' # pipe
+f = '@kx_djf(pa,<esc>gsf dx_|sd -F ",)" ")"<ret>;:format<ret>' # fun calls (de-pipe)
+P = '@x_|sd "\|<gt>" "|<gt>\n"<ret>;:format<ret>' # pipes on separate lines
+
+# Elixir: tuple
+[keys.normal.space.x.x.t]
+o = '@ms{mma:ok, <esc>ma{;' # wrap in :ok
+e = '@ms{mma:error, <esc>ma{;' # wrap in :error
+c = '@ms{mma:cont, <esc>ma{;' # wrap in :cont
+h = '@ms{mma:halt, <esc>ma{;' # wrap in :halt
+u = '@f}h<A-o>y<A-o>R;' # unwrap tuple

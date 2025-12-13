@@ -4,7 +4,13 @@ lexical = { command = "/Users/pawel/projects/elixir/lexical/_build/dev/package/l
 [[language]]
 name = "elixir"
 language-servers = [ "lexical" ]
+text-width = 100
 
 [[language]]
 name = "heex"
 language-servers = [ "lexical" ]
+text-width = 100
+
+[[language]]
+name = "markdown"
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}

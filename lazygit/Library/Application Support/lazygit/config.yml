@@ -5,16 +5,15 @@ gui:
     selectedRangeBgColor:
       - '#404c51'
   showFileTree: false
-
 os:
   edit: 'hx {{filename}}'
   editAtLine: 'hx {{filename}}:{{line}}'
   editAtLineAndWait: 'hx {{filename}}:{{line}}'
   editInTerminal: true
-
 promptToReturnFromSubprocess: false
-
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
+      # externalDiffCommand: difft --color=always --display=inline
+  overrideGpg: true

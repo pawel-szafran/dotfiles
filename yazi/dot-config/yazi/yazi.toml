@@ -1,0 +1,4 @@
+[open]
+prepend_rules = [
+	{ name = "*.log", use = [ "edit" ] }
+]

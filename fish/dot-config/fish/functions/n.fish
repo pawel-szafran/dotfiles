@@ -3,7 +3,5 @@
 ##
 
 function n
-    j notes
-    kitten @ set-window-title notes
-    hx .
+    p notes
 end

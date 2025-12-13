@@ -12,7 +12,9 @@ set -gx ERL_AFLAGS '-kernel shell_history enabled'
 ## Path
 ##
 
+fish_add_path ~/.local/bin
 fish_add_path ~/.local/share/mise/installs/rust/(mise current -C ~ rust)/bin
+fish_add_path ~/.local/share/mise/installs/node/(mise current -C ~ node)/bin
 
 ##
 ## Aliases
@@ -25,9 +27,17 @@ alias la='ll -a'
 alias lt='eza -T --color=always --group-directories-first --icons'
 alias lta='lt -a'
 
-alias j='z'
-alias h='tldr'
-alias lg='lazygit'
+alias top='btop'
+alias g='lazygit'
+alias d='lazydocker'
+alias j='just'
+alias c='pt c; claude'
+
+##
+## Config
+##
+
+ulimit -n 1024
 
 ##
 ## Interactive
@@ -46,6 +56,9 @@ if status is-interactive
 
     # direnv
     direnv hook fish | source
+
+    # zoxide
+    zoxide init fish | source
 
     # fzf
     fzf --fish | source
