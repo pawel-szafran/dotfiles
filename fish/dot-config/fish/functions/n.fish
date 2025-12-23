@@ -1,8 +1,4 @@
-##
-## Open notes
-##
-
-function n
+function n -d "Open notes"
     z notes
     zellij action rename-session notes
     set -gx ZELLIJ_SESSION_NAME notes

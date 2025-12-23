@@ -1,8 +1,4 @@
-##
-## Update terminal setup
-##
-
-function tu
+function tu -d "Update terminal setup"
     tu_sym
 
     cd $DOTFILES_DIR

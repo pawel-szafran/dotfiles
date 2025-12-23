@@ -1,8 +1,4 @@
-##
-## Update terminal setup symlinks
-##
-
-function tu_sym
+function tu_sym -d "Update terminal setup symlinks"
     cd $DOTFILES_DIR
 
     for pkg in stow fish ghostty git helix zellij direnv lazygit btop yazi

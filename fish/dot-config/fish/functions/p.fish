@@ -1,8 +1,4 @@
-##
-## Set up project tab
-##
-
-function p
+function p -d "Set up project tab"
     if set -q argv[1]
         z $argv[1]
     end

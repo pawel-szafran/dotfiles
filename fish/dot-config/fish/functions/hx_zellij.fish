@@ -1,8 +1,4 @@
-##
-## Integrate Helix with Zellij
-##
-
-function hx_zellij
+function hx_zellij -d "Integrate Helix with Zellij"
     function iex_test_pane_exists
         zellij action dump-layout | grep -q '"+iex" "-S" "mix"'
     end
