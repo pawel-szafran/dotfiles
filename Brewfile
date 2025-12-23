@@ -43,6 +43,7 @@ brew "ripgrep"
 brew "scooter"
 brew "sd"
 brew "slides", args: ["HEAD"]
+brew "terminal-notifier"
 brew "tokei"
 brew "trivy"
 brew "xh"
