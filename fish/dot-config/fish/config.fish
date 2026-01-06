@@ -27,10 +27,10 @@ alias lt='eza -T --color=always --group-directories-first --icons'
 alias lta='lt -a'
 
 alias top='btop'
-alias lzg='lazygit'
-alias lzd='lazydocker'
-alias j='just'
-alias zj='zellij'
+abbr -a j just
+abbr -a lzg lazygit
+abbr -a lzd lazydocker
+abbr -a zj zellij
 
 ##
 ## Config
