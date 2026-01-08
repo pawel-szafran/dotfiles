@@ -21,6 +21,7 @@ brew "wget"
 # Modern tools
 brew "age"
 brew "btop"
+brew "chafa"
 brew "csview"
 brew "duckdb"
 brew "eza"
