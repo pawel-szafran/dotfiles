@@ -62,7 +62,7 @@ brew "superhtml"
 brew "vscode-langservers-extracted"
 
 # Apps
-cask "ghostty"
+cask "ghostty@tip"
 cask "docker-desktop"
 cask "imageoptim"
 cask "tableplus"
