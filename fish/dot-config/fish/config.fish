@@ -30,6 +30,7 @@ abbr -a j just
 abbr -a lzg lazygit
 abbr -a lzd lazydocker
 abbr -a zj zellij
+abbr -a r ralph
 
 ##
 ## Config
