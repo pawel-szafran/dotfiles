@@ -27,9 +27,12 @@ alias lta='lt -a'
 
 alias top='btop'
 abbr -a j just
+abbr -a g lazygit
 abbr -a lzg lazygit
 abbr -a lzd lazydocker
 abbr -a zj zellij
+abbr -a c claude
+abbr -a d droid
 abbr -a r ralph
 
 ##
