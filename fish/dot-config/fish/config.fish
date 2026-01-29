@@ -5,6 +5,18 @@
 set -gx EDITOR hx
 set -gx BAT_THEME ansi
 
+# Gum theme (Everforest)
+set -gx GUM_CHOOSE_CURSOR_FOREGROUND "#a7c080"
+set -gx GUM_CHOOSE_SELECTED_FOREGROUND "#a7c080"
+set -gx GUM_CHOOSE_HEADER_FOREGROUND "#83c092"
+set -gx GUM_INPUT_CURSOR_FOREGROUND "#a7c080"
+set -gx GUM_INPUT_PROMPT_FOREGROUND "#83c092"
+set -gx GUM_CONFIRM_PROMPT_FOREGROUND "#83c092"
+set -gx GUM_CONFIRM_SELECTED_FOREGROUND "#2d353b"
+set -gx GUM_CONFIRM_SELECTED_BACKGROUND "#a7c080"
+set -gx GUM_CONFIRM_UNSELECTED_FOREGROUND "#d3c6aa"
+set -gx GUM_CONFIRM_UNSELECTED_BACKGROUND "#343f44"
+
 # Elixir
 set -gx ERL_AFLAGS '-kernel shell_history enabled'
 
@@ -24,13 +36,19 @@ alias ll='eza -l --color=always --group-directories-first --icons'
 alias la='ll -a'
 alias lt='eza -T --color=always --group-directories-first --icons'
 alias lta='lt -a'
-
 alias top='btop'
+
 abbr -a j just
 abbr -a g lazygit
 abbr -a lzg lazygit
 abbr -a lzd lazydocker
-abbr -a zj zellij
+abbr -a t tmux
+
+abbr wts wt switch
+abbr wtc wt switch --create
+abbr wtl wt list
+abbr wtr wt remove
+
 abbr -a c claude
 abbr -a d droid
 abbr -a r ralph
@@ -46,10 +64,6 @@ ulimit -n 1024
 ##
 
 if status is-interactive
-    # prompt
-    set hydro_multiline true
-    set hydro_color_prompt '#b58900'
-
     # bindings
     fish_default_key_bindings
 
@@ -61,11 +75,6 @@ if status is-interactive
 
     # zoxide
     zoxide init fish | source
-
-    # zellij
-    if not set -q ZELLIJ
-        exec zellij
-    end
 
     # fzf
     fzf --fish | source

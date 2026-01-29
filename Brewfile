@@ -17,6 +17,7 @@ brew "socat"
 brew "telnet"
 brew "watch"
 brew "wget"
+brew "worktrunk"
 
 # Modern tools
 brew "age"
@@ -27,6 +28,7 @@ brew "duckdb"
 brew "eza"
 brew "fd"
 brew "fzf"
+brew "gum"
 brew "git-delta"
 brew "glow"
 brew "hck"
@@ -55,7 +57,7 @@ brew "zoxide"
 
 # Editor
 # brew "helix", args: ["HEAD"]
-brew "zellij"
+brew "tmux"
 brew "dprint"
 brew "marksman"
 brew "superhtml"
