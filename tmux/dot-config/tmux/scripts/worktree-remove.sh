@@ -13,7 +13,11 @@ if [[ -n "$current_branch" ]]; then
     branches=$(echo "$branches" | rg -vxF "$current_branch" || true)
 fi
 
-[[ -z "$branches" ]] && { echo "No worktrees to remove"; sleep 1; exit 0; }
+[[ -z "$branches" ]] && {
+    echo "No worktrees to remove"
+    sleep 1
+    exit 0
+}
 
 # Multi-select worktrees to remove
 selected=$(echo "$branches" | fzf --height=100% --reverse --multi --header "Remove worktrees (Tab to multi-select)" --header-first)

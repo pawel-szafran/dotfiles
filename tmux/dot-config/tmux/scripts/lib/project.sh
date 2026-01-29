@@ -4,7 +4,7 @@
 create_project_session() {
     local session_name="$1"
     local target_dir="$2"
-    
+
     tmux new-session -d -s "$session_name" -n git -c "$target_dir"
     tmux send-keys -t "$session_name:git" "lazygit" Enter
     tmux new-window -t "$session_name" -n code -c "$target_dir"
@@ -15,7 +15,7 @@ create_project_session() {
 
 handle_current_session() {
     local current_session="$1"
-    
+
     if gum confirm "Kill '$current_session' session?" --default=false; then
         echo "$current_session"
     fi
@@ -24,15 +24,15 @@ handle_current_session() {
 open_project_session() {
     local session_name="$1"
     local target_dir="$2"
-    
+
     local current_session=$(tmux display-message -p "#{session_name}")
     local session_to_kill=""
-    
+
     # Don't ask about current session if we're opening the same one
     if [[ "$current_session" != "$session_name" ]]; then
         session_to_kill=$(handle_current_session "$current_session")
     fi
-    
+
     if tmux has-session -t="$session_name" 2>/dev/null; then
         action=$(gum choose --header="Session '$session_name' exists" "Attach" "Recreate")
         case "$action" in
@@ -47,11 +47,11 @@ open_project_session() {
     else
         create_project_session "$session_name" "$target_dir"
     fi
-    
+
     # Kill old session after switching
     if [[ -n "$session_to_kill" ]]; then
         tmux kill-session -t="$session_to_kill" 2>/dev/null || true
     fi
-    
+
     return 0
 }

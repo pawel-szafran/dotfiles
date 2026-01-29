@@ -6,7 +6,7 @@ home="$HOME"
 path="${path/#$home/\~}"
 
 # Split into segments
-IFS='/' read -ra segments <<< "$path"
+IFS='/' read -ra segments <<<"$path"
 
 # Build output
 result=""
@@ -16,7 +16,7 @@ last_idx=$((${#segments[@]} - 1))
 for i in "${!segments[@]}"; do
     seg="${segments[$i]}"
     [ -z "$seg" ] && continue
-    
+
     if [ "$i" -eq "$last_idx" ]; then
         # Basename: full name
         result+="$seg"

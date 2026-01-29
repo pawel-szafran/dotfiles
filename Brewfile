@@ -45,6 +45,7 @@ brew "resvg"
 brew "ripgrep"
 brew "scooter"
 brew "sd"
+brew "shfmt"
 brew "slides", args: ["HEAD"]
 brew "terminal-notifier"
 brew "tokei"

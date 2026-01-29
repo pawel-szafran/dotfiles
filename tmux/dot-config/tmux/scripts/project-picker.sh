@@ -19,7 +19,11 @@ query=$(gum input --header "Open project" --placeholder "$default_project")
 
 # Step 3: Find project via zoxide (exclude .worktrees directories)
 matches=$(zoxide query -l "$query" 2>/dev/null | rg -v '\.worktrees' || true)
-[[ -z "$matches" ]] && { echo "No matches for '$query'"; sleep 1; exit 1; }
+[[ -z "$matches" ]] && {
+    echo "No matches for '$query'"
+    sleep 1
+    exit 1
+}
 
 match_count=$(echo "$matches" | wc -l | tr -d ' ')
 if [[ "$match_count" -eq 1 ]]; then
@@ -55,7 +59,11 @@ fi
 
 # Step 7: Get the worktree path (wt switch doesn't change dir in scripts)
 target_dir=$(wt list --format=json | jq -r --arg b "$name" '.[] | select(.branch == $b) | .path')
-[[ -z "$target_dir" ]] && { echo "Failed to find worktree for '$name'"; sleep 1; exit 1; }
+[[ -z "$target_dir" ]] && {
+    echo "Failed to find worktree for '$name'"
+    sleep 1
+    exit 1
+}
 session_name=$(basename "$target_dir")
 
 # Step 8: Create or attach to session
