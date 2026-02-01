@@ -43,11 +43,13 @@ abbr -a g lazygit
 abbr -a lzg lazygit
 abbr -a lzd lazydocker
 abbr -a t tmux
+abbr -a t tmux
+abbr -a calc fend
 
-abbr wts wt switch
-abbr wtc wt switch --create
-abbr wtl wt list
-abbr wtr wt remove
+abbr -a wts wt switch
+abbr -a wtc wt switch --create
+abbr -a wtl wt list
+abbr -a wtr wt remove
 
 abbr -a c claude
 abbr -a d droid

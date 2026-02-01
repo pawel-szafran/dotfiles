@@ -1,19 +1,19 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "6f50636"
+rev = "d078b01"
 hash = "56fdabc96fc1f4d53c96eb884b02a5be"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "6f50636"
+rev = "d078b01"
 hash = "8a7c58225816a163a6e8730c0adafbc8"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "6f50636"
+rev = "d078b01"
 hash = "25aee698dd1081001008ce0cb1cc4da3"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
-rev = "ca61658"
+rev = "ac51f0f"
 hash = "e25fb61c14484de843b52430a72b5196"
