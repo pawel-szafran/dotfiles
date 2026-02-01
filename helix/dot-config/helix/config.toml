@@ -54,6 +54,7 @@ Q = ":qa!"
 # Coding
 [keys.normal.space.x]
 f = ":sh tmux new-window -- yazi %sh{path dirname %{file_path_absolute}}"
+p = ":sh hx_preview %{file_path_absolute}"
 o = "@:o <C-r>%<C-w>"
 O = "@:o <C-r>%<backspace><backspace><backspace>/"
 m = "@:move <C-r>%"

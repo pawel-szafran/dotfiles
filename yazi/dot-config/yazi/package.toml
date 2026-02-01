@@ -8,11 +8,6 @@ use = "yazi-rs/plugins:toggle-pane"
 rev = "d078b01"
 hash = "8a7c58225816a163a6e8730c0adafbc8"
 
-[[plugin.deps]]
-use = "yazi-rs/plugins:piper"
-rev = "d078b01"
-hash = "25aee698dd1081001008ce0cb1cc4da3"
-
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-frappe"
 rev = "ac51f0f"
