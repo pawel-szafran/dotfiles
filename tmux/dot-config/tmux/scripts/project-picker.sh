@@ -51,10 +51,10 @@ if echo "$branches" | rg -qxF "$name"; then
     :
 elif git rev-parse --verify "refs/heads/$name" &>/dev/null; then
     # Branch exists but no worktree, create worktree
-    wt switch "$name" &>/dev/null
+    wt switch --yes "$name"
 else
     # New branch, create branch and worktree
-    wt switch --create "$name" &>/dev/null
+    wt switch --yes --create "$name"
 fi
 
 # Step 7: Get the worktree path (wt switch doesn't change dir in scripts)

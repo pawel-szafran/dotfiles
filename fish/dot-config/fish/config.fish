@@ -47,7 +47,7 @@ abbr -a t tmux
 abbr -a calc fend
 
 abbr -a wts wt switch
-abbr -a wtc wt switch --create
+abbr -a wtc wt switch -c
 abbr -a wtl wt list
 abbr -a wtr wt remove
 

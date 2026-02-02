@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 
 # Get worktrees from worktrunk
 worktrees_json=$(wt list --format=json 2>/dev/null || echo "[]")
@@ -23,6 +22,30 @@ fi
 selected=$(echo "$branches" | fzf --height=100% --reverse --multi --header "Remove worktrees (Tab to multi-select)" --header-first)
 [[ -z "$selected" ]] && exit 0
 
-# Convert newlines to space-separated list and remove
 branch_list=$(echo "$selected" | tr '\n' ' ')
-wt remove $branch_list
+
+# Remove worktrees, retrying with force flags if needed
+flags=()
+while true; do
+    output_file=$(mktemp)
+    wt remove --yes --foreground "${flags[@]}" $branch_list 2>&1 | tee "$output_file" || true
+    output=$(<"$output_file")
+    rm -f "$output_file"
+
+    if echo "$output" | grep -q "run wt remove"; then
+        echo
+        if gum confirm "Retry with force flags?"; then
+            flags=()
+            selected_flags=$(printf "Force remove worktree (untracked files)\nForce delete branch (unmerged)" |
+                gum choose --no-limit --header "Select flags")
+            [[ "$selected_flags" == *"worktree"* ]] && flags+=("-f")
+            [[ "$selected_flags" == *"branch"* ]] && flags+=("-D")
+            echo
+            continue
+        fi
+    fi
+    break
+done
+
+echo
+read -n 1 -s -r -p "[Press any key to close]"
