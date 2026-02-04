@@ -38,6 +38,7 @@ alias lt='eza -T --color=always --group-directories-first --icons'
 alias lta='lt -a'
 alias top='btop'
 
+abbr -a o open
 abbr -a j just
 abbr -a g lazygit
 abbr -a lzg lazygit
