@@ -59,7 +59,7 @@ abbr -a r ralph
 ## Config
 ##
 
-ulimit -n 1024
+ulimit -n 8192
 
 ##
 ## Interactive
