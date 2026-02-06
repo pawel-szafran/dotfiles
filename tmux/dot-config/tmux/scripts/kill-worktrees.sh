@@ -19,7 +19,7 @@ fi
 }
 
 # Multi-select worktrees to remove
-selected=$(echo "$branches" | fzf --height=100% --reverse --multi --header "Remove worktrees (Tab to multi-select)" --header-first)
+selected=$(echo "$branches" | fzf --height=100% --reverse --multi --header "Kill worktrees (Tab to multi-select)" --header-first)
 [[ -z "$selected" ]] && exit 0
 
 branch_list=$(echo "$selected" | tr '\n' ' ')
