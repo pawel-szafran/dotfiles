@@ -5,13 +5,7 @@ SCRIPT_DIR="$(dirname "$0")"
 source "$SCRIPT_DIR/lib/project.sh"
 
 # Step 1: Detect default project name from current directory
-parent_dir=$(dirname "$PWD")
-parent_name=$(basename "$parent_dir")
-if [[ "$parent_name" == *.worktrees ]]; then
-    default_project="${parent_name%.worktrees}"
-else
-    default_project=$(basename "$PWD")
-fi
+default_project=$(get_current_project_name)
 
 # Step 2: Get project name from user (placeholder shows default, Enter uses it)
 query=$(gum input --header "Open project" --placeholder "$default_project")

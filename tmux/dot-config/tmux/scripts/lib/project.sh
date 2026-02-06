@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 # Shared functions for project scripts
 
+get_current_project_name() {
+    local parent_dir=$(dirname "$PWD")
+    local parent_name=$(basename "$parent_dir")
+    if [[ "$parent_name" == *.worktrees ]]; then
+        echo "${parent_name%.worktrees}"
+    else
+        echo "$(basename "$PWD")"
+    fi
+}
+
 create_project_session() {
     local session_name="$1"
     local target_dir="$2"
