@@ -21,42 +21,6 @@ set -gx GUM_CONFIRM_UNSELECTED_BACKGROUND "#343f44"
 set -gx ERL_AFLAGS '-kernel shell_history enabled'
 
 ##
-## Path
-##
-
-fish_add_path ~/.local/bin
-
-##
-## Aliases
-##
-
-# Change `ls` to `eza`
-alias ls='eza --color=always --group-directories-first --icons'
-alias ll='eza -l --color=always --group-directories-first --icons'
-alias la='ll -a'
-alias lt='eza -T --color=always --group-directories-first --icons'
-alias lta='lt -a'
-alias top='btop'
-
-abbr -a o open
-abbr -a j just
-abbr -a g lazygit
-abbr -a lzg lazygit
-abbr -a lzd lazydocker
-abbr -a t tmux
-abbr -a t tmux
-abbr -a calc fend
-
-abbr -a wts wt switch
-abbr -a wtc wt switch -c
-abbr -a wtl wt list
-abbr -a wtr wt remove
-
-abbr -a c claude
-abbr -a d droid
-abbr -a r ralph
-
-##
 ## Config
 ##
 
@@ -67,24 +31,58 @@ ulimit -n 8192
 ##
 
 if status is-interactive
-    # bindings
+
+    # Change `ls` to `eza`
+    alias ls='eza --color=always --group-directories-first --icons'
+    alias ll='eza -l --color=always --group-directories-first --icons'
+    alias la='ll -a'
+    alias lt='eza -T --color=always --group-directories-first --icons'
+    alias lta='lt -a'
+    alias top='btop'
+
+    abbr -a o open
+    abbr -a j just
+    abbr -a g lazygit
+    abbr -a lzg lazygit
+    abbr -a lzd lazydocker
+    abbr -a t tmux
+    abbr -a t tmux
+    abbr -a calc fend
+
+    abbr -a wts wt switch
+    abbr -a wtc wt switch -c
+    abbr -a wtl wt list
+    abbr -a wtr wt remove
+
+    abbr -a c claude
+    abbr -a d droid
+    abbr -a r ralph
+
+    ## bindings
     fish_default_key_bindings
 
-    # mise
+    ## mise
     mise activate fish | source
 
-    # direnv
+    ## direnv
     direnv hook fish | source
 
-    # zoxide
+    ## zoxide
     zoxide init fish | source
 
-    # fzf
+    ## fzf
     fzf --fish | source
     set -gx FZF_DEFAULT_COMMAND fd
     set -gx FZF_CTRL_T_COMMAND fd
     set -gx FZF_DEFAULT_OPTS '-m --reverse'
+
 end
+
+##
+## Path
+##
+
+fish_add_path -P ~/.local/bin
 
 ##
 ## Unversioned work config
