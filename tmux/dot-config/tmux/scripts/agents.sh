@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-AGENT_PATTERNS="claude|droid|claudesp"
+AGENT_PATTERNS="claude|droid"
 STATE_DIR="$HOME/.local/state/agents"
 RED='\033[31m'
 YELLOW='\033[33m'
