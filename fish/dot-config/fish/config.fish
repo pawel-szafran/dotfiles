@@ -64,6 +64,25 @@ if status is-interactive
     ## mise
     mise activate fish | source
 
+    # Keep custom bin dirs at the front of PATH after mise reshims on cd
+    function __ensure_bin_overrides --on-event fish_prompt
+        set -l bins $HOME/.local/bin $HOME/.bun/bin
+        set -l needs_fix false
+        for i in (seq (count $bins))
+            if test "$PATH[$i]" != "$bins[$i]"
+                set needs_fix true
+                break
+            end
+        end
+        if test "$needs_fix" = true
+            set -l filtered $PATH
+            for b in $bins
+                set filtered (string match -v -- $b $filtered)
+            end
+            set -gx PATH $bins $filtered
+        end
+    end
+
     ## direnv
     direnv hook fish | source
 
