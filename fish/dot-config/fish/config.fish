@@ -56,7 +56,7 @@ if status is-interactive
 
     abbr -a c claude
     abbr -a d droid
-    abbr -a r ralph
+    abbr -a r ralph-tui
 
     ## bindings
     fish_default_key_bindings
@@ -83,6 +83,7 @@ end
 ##
 
 fish_add_path -P ~/.local/bin
+fish_add_path -P ~/.bun/bin
 
 ##
 ## Unversioned work config
