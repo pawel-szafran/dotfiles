@@ -1,6 +1,57 @@
 #!/usr/bin/env bash
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source "$SCRIPT_DIR/lib/session.sh"
 
 session=$(tmux display-message -p "#{session_name}")
-kill_session_with_teardown "$session"
+session_path=$(tmux display-message -p "#{pane_current_path}")
+
+# Detect if session is in a worktree
+delete_worktree=false
+parent_dir=$(dirname "$session_path")
+parent_name=$(basename "$parent_dir")
+if [[ "$parent_name" == *.worktrees ]]; then
+    repo_name="${parent_name%.worktrees}"
+    repo_dir="$(dirname "$parent_dir")/$repo_name"
+    branch=$(wt list --format=json -C "$repo_dir" 2>/dev/null |
+        jq -r --arg p "$session_path" '.[] | select(.path == $p) | .branch // empty')
+    if [[ -n "$branch" ]] && gum confirm --default=false "Also delete worktree '$branch'?"; then
+        delete_worktree=true
+    fi
+fi
+
+# Run teardown recipes (needs dir to still exist)
+if [[ -n "$session_path" ]] && cd "$session_path" 2>/dev/null; then
+    for recipe in dev-down test-down; do
+        if just --summary 2>/dev/null | tr ' ' '\n' | grep -qxF "$recipe"; then
+            echo "[$session] Running just $recipe..."
+            just "$recipe" 2>&1 || true
+        fi
+    done
+fi
+
+# Remove worktree (interactive, needs terminal alive)
+if [[ "$delete_worktree" == true ]]; then
+    flags=()
+    while true; do
+        output_file=$(mktemp)
+        wt remove --yes --foreground -C "$repo_dir" "${flags[@]}" "$branch" 2>&1 | tee "$output_file" || true
+        output=$(<"$output_file")
+        rm -f "$output_file"
+
+        if echo "$output" | grep -q "run wt remove"; then
+            echo
+            if gum confirm "Retry with force flags?"; then
+                flags=()
+                selected_flags=$(printf "Force remove worktree (untracked files)\nForce delete branch (unmerged)" |
+                    gum choose --no-limit --header "Select flags")
+                [[ "$selected_flags" == *"worktree"* ]] && flags+=("-f")
+                [[ "$selected_flags" == *"branch"* ]] && flags+=("-D")
+                echo
+                continue
+            fi
+        fi
+        break
+    done
+fi
+
+# Kill session last (closes the popup)
+tmux kill-session -t "$session"

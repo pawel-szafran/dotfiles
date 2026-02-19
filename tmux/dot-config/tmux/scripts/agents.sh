@@ -36,7 +36,7 @@ while IFS='|' read -r pane_pid session window wname pane cmd path; do
     esac
 
     # Truncate long session names
-    if (( ${#session} > 39 )); then
+    if ((${#session} > 39)); then
         display_session="${session:0:36}..."
     else
         display_session="$session"
