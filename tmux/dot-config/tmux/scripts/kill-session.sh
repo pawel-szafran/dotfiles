@@ -42,12 +42,8 @@ if [[ "$delete_worktree" == true ]]; then
 
         if echo "$output" | grep -q "run wt remove"; then
             echo
-            if gum confirm "Retry with force flags?"; then
-                flags=()
-                selected_flags=$(printf "Force remove worktree (untracked files)\nForce delete branch (unmerged)" |
-                    gum choose --no-limit --header "Select flags")
-                [[ "$selected_flags" == *"worktree"* ]] && flags+=("-f")
-                [[ "$selected_flags" == *"branch"* ]] && flags+=("-D")
+            if gum confirm --default=false "Force delete worktree?"; then
+                flags=(-f -D)
                 echo
                 continue
             fi
