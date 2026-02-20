@@ -93,7 +93,7 @@ if status is-interactive
     fzf --fish | source
     set -gx FZF_DEFAULT_COMMAND fd
     set -gx FZF_CTRL_T_COMMAND fd
-    set -gx FZF_DEFAULT_OPTS '-m --reverse'
+    set -gx FZF_DEFAULT_OPTS '-m --reverse --color=16'
 
 end
 
