@@ -4,17 +4,20 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 session=$(tmux display-message -p "#{session_name}")
 session_path=$(tmux display-message -p "#{pane_current_path}")
 
-# Detect if session is in a worktree
+# Detect if session is in a worktree (resolve root even if cd'd into a subdir)
 delete_worktree=false
-parent_dir=$(dirname "$session_path")
-parent_name=$(basename "$parent_dir")
-if [[ "$parent_name" == *.worktrees ]]; then
-    repo_name="${parent_name%.worktrees}"
-    repo_dir="$(dirname "$parent_dir")/$repo_name"
-    branch=$(wt list --format=json -C "$repo_dir" 2>/dev/null |
-        jq -r --arg p "$session_path" '.[] | select(.path == $p) | .branch // empty')
-    if [[ -n "$branch" ]] && gum confirm --default=false "Also delete worktree '$branch'?"; then
-        delete_worktree=true
+worktree_root=$(cd "$session_path" 2>/dev/null && git rev-parse --show-toplevel 2>/dev/null) || true
+if [[ -n "$worktree_root" ]]; then
+    parent_dir=$(dirname "$worktree_root")
+    parent_name=$(basename "$parent_dir")
+    if [[ "$parent_name" == *.worktrees ]]; then
+        repo_name="${parent_name%.worktrees}"
+        repo_dir="$(dirname "$parent_dir")/$repo_name"
+        branch=$(wt list --format=json -C "$repo_dir" 2>/dev/null |
+            jq -r --arg p "$worktree_root" '.[] | select(.path == $p) | .branch // empty')
+        if [[ -n "$branch" ]] && gum confirm --default=false "Also delete worktree '$branch'?"; then
+            delete_worktree=true
+        fi
     fi
 fi
 
