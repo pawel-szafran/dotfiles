@@ -75,3 +75,4 @@ cask "tableplus"
 # AI
 cask "claude-code"
 cask "droid"
+brew "agent-browser"
