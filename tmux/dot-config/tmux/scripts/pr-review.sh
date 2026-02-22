@@ -10,7 +10,13 @@ url=$(gum input --header "Review PR" --placeholder "$clipboard")
 [[ -z "$url" ]] && url="$clipboard"
 [[ -z "$url" ]] && exit 0
 
-# Step 2: Parse repo name and PR number from URL
+# Step 2: Validate and parse PR URL
+[[ "$url" =~ github\.com/.+/.+/pull/[0-9]+ ]] || {
+    echo "Invalid PR URL"
+    sleep 1
+    exit 1
+}
+
 repo=$(echo "$url" | sed -E 's|.*/([^/]+)/pull/[0-9]+.*|\1|')
 pr_number=$(echo "$url" | sed -E 's|.*/pull/([0-9]+).*|\1|')
 
