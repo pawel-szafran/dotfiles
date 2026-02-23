@@ -4,6 +4,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 session=$(tmux display-message -p "#{session_name}")
 session_path=$(tmux display-message -p "#{pane_current_path}")
 
+gum confirm --default "Kill session '$session'?" || exit 0
+
 # Detect if session is in a worktree (resolve root even if cd'd into a subdir)
 delete_worktree=false
 worktree_root=$(cd "$session_path" 2>/dev/null && git rev-parse --show-toplevel 2>/dev/null) || true
