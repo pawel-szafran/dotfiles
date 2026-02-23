@@ -12,7 +12,7 @@ query=$(gum input --header "Open project" --placeholder "$default_project")
 [[ -z "$query" ]] && query="$default_project"
 
 # Step 3: Find project via zoxide (exclude .worktrees directories)
-matches=$(zoxide query -l "$query" 2>/dev/null | rg -v '\.worktrees' || true)
+matches=$(zoxide query -l "$query" 2>/dev/null | rg -v '\.worktrees' | rg '/projects/' || true)
 [[ -z "$matches" ]] && {
     echo "No matches for '$query'"
     sleep 1
