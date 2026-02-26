@@ -22,7 +22,7 @@ function hx_tmux -d "Integrate Helix with tmux"
         case test
             set -l file $argv[2]
 
-            echo $file > /tmp/hx_last_test.$hx_pid
+            echo $file >/tmp/hx_last_test.$hx_pid
 
             set -l test_pane (_hx_tmux_test_pane_id)
 
@@ -32,14 +32,23 @@ function hx_tmux -d "Integrate Helix with tmux"
                 tmux display-popup -E -w 80% -h 80% -- bash -c "mise x -- just test $file; echo; read -n 1 -s -r -p '[Press any key to close]'"
             end
 
+        case test_all
+            echo -n >/tmp/hx_last_test.$hx_pid
+            tmux display-popup -E -w 80% -h 80% -- bash -c "mise x -- just test; echo; read -n 1 -s -r -p '[Press any key to close]'"
+
         case test_last
             set -l marker /tmp/hx_last_test.$hx_pid
 
             if not test -f $marker
-                tmux display-message "No last test to rerun"
-                return 1
+                hx_tmux test_all
+                return
             end
 
-            hx_tmux test (cat $marker)
+            set -l last (string trim < $marker)
+            if test -z "$last"
+                hx_tmux test_all
+            else
+                hx_tmux test $last
+            end
     end
 end
