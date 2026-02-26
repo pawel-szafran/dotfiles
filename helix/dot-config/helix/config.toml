@@ -48,6 +48,7 @@ F = "file_picker_in_current_buffer_directory"
 t = ":sh tmux display-popup -E -w 80%% -h 80%% -d %sh{path dirname %{file_path_absolute}} -- fish"
 space = ":fmt"
 ret = ":w!"
+l = ":sh hx_tmux test_last"
 q = ":wqa"
 Q = ":qa!"
 
@@ -90,6 +91,7 @@ t = ':pipe ccase -t title | tr -d "\n"'
 i = ":sh hx_tmux test_iex"
 t = ":sh hx_tmux test %{buffer_name}:%{cursor_line}"
 f = ":sh hx_tmux test %{buffer_name}"
+l = ":sh hx_tmux test_last"
 
 # Elixir
 [keys.normal.space.x.x]
