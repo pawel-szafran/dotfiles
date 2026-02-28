@@ -58,7 +58,7 @@ f = ":sh tmux new-window -- yazi %sh{path dirname %{file_path_absolute}}"
 p = ":sh hx_preview %{file_path_absolute}"
 o = "@:o <C-r>%<C-w>"
 O = "@:o <C-r>%<backspace><backspace><backspace>/"
-m = "@:move <C-r>%"
+m = "@:move! <C-r>%"
 d = [":sh rm %{buffer_name}", ":buffer-close!"]
 r = [
     ":write-all",
