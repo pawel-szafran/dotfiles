@@ -11,6 +11,15 @@ function hx_tmux -d "Integrate Helix with tmux"
         return 1
     end
 
+    function _hx_tmux_test_popup
+        tmux kill-session -t hx-test 2>/dev/null
+        tmux new-session -d -s hx-test \
+            "bash -c 'mise x -- just test $argv; echo; printf \"\\033[90m[Press any key to close]\\033[0m\"; read -n 1 -s -r'"
+        tmux set-option -t hx-test detach-on-destroy on
+        tmux set-option -t hx-test status off
+        tmux display-popup -E -w 80% -h 80% -- tmux attach-session -t hx-test
+    end
+
     switch $argv[1]
         case test_iex
             if _hx_tmux_test_pane_id >/dev/null
@@ -29,12 +38,12 @@ function hx_tmux -d "Integrate Helix with tmux"
             if test $status -eq 0
                 tmux send-keys -t $test_pane (printf 'test "%s"' $file) Enter
             else
-                tmux display-popup -E -w 80% -h 80% -- bash -c "mise x -- just test $file; echo; read -n 1 -s -r -p '[Press any key to close]'"
+                _hx_tmux_test_popup $file
             end
 
         case test_all
             echo -n >/tmp/hx_last_test.$hx_pid
-            tmux display-popup -E -w 80% -h 80% -- bash -c "mise x -- just test; echo; read -n 1 -s -r -p '[Press any key to close]'"
+            _hx_tmux_test_popup
 
         case test_last
             set -l marker /tmp/hx_last_test.$hx_pid
