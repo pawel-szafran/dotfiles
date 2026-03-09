@@ -2,7 +2,7 @@ theme = "everforest_dark"
 
 [editor]
 shell = ["fish", "-c"]
-idle-timeout = 200
+idle-timeout = 0
 color-modes = true
 insert-final-newline = true
 jump-label-alphabet = "fjdkslaruvmeicwox"
