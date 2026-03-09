@@ -104,8 +104,9 @@ D = '@gs/, do: <ret>c do<ret><esc>oend<esc>:format<ret>' # multi-line do
 w = '@gsecwith<esc>gsj/ -<gt><ret>dhvgsdkf pa <lt>- <esc>gs:format<ret>' # case to with
 c = '@gseccase<esc>/ <lt>- <ret>dh<A-o>do<esc>Pa -<gt> <esc>Jkgs:format<ret>' # with to case
 p = '@gsf(;<A-n>d<A-p><A-p>i|<gt> <esc>3hPa <esc>x_|sd -F "(," "("<ret>gs:format<ret>' # pipe
-f = '@kx_djf(pa,<esc>gsf dx_|sd -F ",)" ")"<ret>;:format<ret>' # fun calls (de-pipe)
+i = '@kx_djf(pa,<esc>gsf dx_|sd -F ",)" ")"<ret>;:format<ret>' # inline fun calls (de-pipe)
 P = '@x_|sd "\|<gt>" "|<gt>\n"<ret>;:format<ret>' # pipes on separate lines
+f = '@ms(<A-;>i' # wrap in a fun
 
 # Elixir: tuple
 [keys.normal.space.x.x.t]
