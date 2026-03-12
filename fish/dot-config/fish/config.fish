@@ -46,7 +46,6 @@ if status is-interactive
     abbr -a lzg lazygit
     abbr -a lzd lazydocker
     abbr -a t tmux
-    abbr -a t tmux
     abbr -a calc fend
 
     abbr -a wts wt switch
