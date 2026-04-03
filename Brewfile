@@ -59,7 +59,7 @@ brew "zet"
 brew "zoxide"
 
 # Editor
-# brew "helix", args: ["HEAD"]
+brew "helix", args: ["HEAD"]
 brew "tmux"
 brew "dprint"
 brew "marksman"
