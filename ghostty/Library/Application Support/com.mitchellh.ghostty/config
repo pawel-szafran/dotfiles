@@ -3,6 +3,8 @@ link-url = true
 maximize = true
 macos-titlebar-style = tabs
 macos-option-as-alt = true
+cursor-style-blink = false
+custom-shader-animation = false
 
 # Everforest Dark/Medium - inline until Ghostty gets an official theme
 # Source: https://gist.github.com/sainnhe/6432f83181c4520ea87b5211fed27950
