@@ -8,7 +8,6 @@ brew "stow"
 
 # Classic tools
 brew "coreutils"
-brew "direnv"
 brew "expect"
 brew "make"
 brew "nmap"

@@ -60,9 +60,6 @@ if status is-interactive
     ## bindings
     fish_default_key_bindings
 
-    ## mise
-    mise activate fish | source
-
     # Keep custom bin dirs at the front of PATH after mise reshims on cd
     function __ensure_bin_overrides --on-event fish_prompt
         set -l bins $HOME/.local/bin $HOME/.bun/bin
@@ -81,9 +78,6 @@ if status is-interactive
             set -gx PATH $bins $filtered
         end
     end
-
-    ## direnv
-    direnv hook fish | source
 
     ## zoxide
     zoxide init fish | source
