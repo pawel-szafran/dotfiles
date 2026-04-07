@@ -1,5 +1,5 @@
 [language-server]
-expert = { command = "/Users/pawel/projects/elixir/expert/apps/expert/burrito_out/expert_darwin_arm64", args = ["--stdio"] }
+expert = { command = "/Users/pawel/projects/elixir/expert/apps/expert/_build/prod/rel/plain/bin/start_expert", args = ["--stdio"] }
 
 [[language]]
 name = "elixir"
