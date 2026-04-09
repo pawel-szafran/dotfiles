@@ -45,7 +45,7 @@ E = 'extend_next_sub_word_end'
 
 [keys.normal.space]
 F = "file_picker_in_current_buffer_directory"
-t = ":sh tmux display-popup -E -w 80%% -h 80%% -d %sh{path dirname %{file_path_absolute}} -- fish"
+t = ":sh tmux split-window -v -l 30%% -c %sh{path dirname %{file_path_absolute}} -- fish"
 space = ":fmt"
 ret = ":w!"
 l = ":sh hx_tmux test_last"
