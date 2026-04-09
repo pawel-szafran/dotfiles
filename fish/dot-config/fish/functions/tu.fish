@@ -35,6 +35,9 @@ function tu -d "Update terminal setup"
     fisher update
 
     tu_log "Updating Yazi packages"
+    for pkg in yazi-rs/plugins:smart-enter yazi-rs/plugins:toggle-pane yazi-rs/flavors:catppuccin-frappe
+        ya pkg add $pkg
+    end
     ya pkg upgrade
 
     cd -
