@@ -39,6 +39,7 @@ brew "hwatch"
 brew "imagemagick"
 brew "jo"
 brew "jq"
+brew "just"
 brew "lazygit", args: ["HEAD"]
 brew "mise"
 brew "ouch"
