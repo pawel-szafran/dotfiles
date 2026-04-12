@@ -16,18 +16,13 @@ git clone https://github.com/pawel-szafran/dotfiles.git && cd dotfiles
 brew bundle
 ```
 
-```console
-sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
-```
-
-```console
-chsh -s /opt/homebrew/bin/fish
-```
+Make Fish [the default shell](https://fishshell.com/docs/current/index.html#default-shell).
 
 Restart terminal.
 
 ```console
 fish_add_path -U /opt/homebrew/bin/
+fish_add_path -U /opt/homebrew/sbin/
 ```
 
 Install [Fisher](https://github.com/jorgebucaran/fisher).
