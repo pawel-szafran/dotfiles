@@ -4,6 +4,7 @@ brew "bash"
 
 # Core
 brew "git"
+brew "git-lfs"
 brew "stow"
 
 # Classic tools
