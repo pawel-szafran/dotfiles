@@ -40,6 +40,7 @@ brew "imagemagick"
 brew "jo"
 brew "jq"
 brew "just"
+brew "lazydocker"
 brew "lazygit", args: ["HEAD"]
 brew "mise"
 brew "ouch"
