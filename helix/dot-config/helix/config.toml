@@ -60,6 +60,7 @@ o = "@:o <C-r>%<C-w>"
 O = "@:o <C-r>%<backspace><backspace><backspace>/"
 m = "@:move! <C-r>%"
 d = [":sh rm %{buffer_name}", ":buffer-close!"]
+y = ":echo %sh{echo -n '%{buffer_name}:%{cursor_line}' | pbcopy; pbpaste}"
 r = [
     ":write-all",
     ":insert-output scooter --no-stdin >/dev/tty",
