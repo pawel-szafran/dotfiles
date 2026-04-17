@@ -55,6 +55,8 @@ if status is-interactive
 
     abbr -a c claude
     abbr -a d droid
+    abbr -a p plannotator
+    abbr -a pa plannotator annotate
 
     ## bindings
     fish_default_key_bindings
