@@ -55,7 +55,6 @@ if status is-interactive
 
     abbr -a c claude
     abbr -a d droid
-    abbr -a r ralph-tui
 
     ## bindings
     fish_default_key_bindings
