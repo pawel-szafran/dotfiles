@@ -79,7 +79,7 @@ B = ":echo %sh{gh browse %{buffer_name}:%{cursor_line} -b=%sh{git rev-parse --ab
 c = ":noop %sh{gh browse %{buffer_name}:%{cursor_line} -c=%sh{git rev-parse HEAD}}"
 C = ":echo %sh{gh browse %{buffer_name}:%{cursor_line} -c=%sh{git rev-parse HEAD} -n | pbcopy; pbpaste}"
 a = ":echo %sh{git blame -p -w -M -L %{cursor_line},%{cursor_line} %{buffer_name} | rg 'author ' | sd 'author ' ''}"
-A = ":echo %sh{git blame -p -w -M %{buffer_name} | rg 'author ' | sd 'author ' '' | sort | uniq -c | sort -rn | sd '\n\\W+' ' | '}"
+A = ":echo %sh{git blame -p -w -M %{buffer_name} | rg '^author ' | sd 'author ' '' | sort | uniq -c | sort -rn | sd '\n\\W+' ' | '}"
 
 # Casing
 [keys.normal.space.x.c]
