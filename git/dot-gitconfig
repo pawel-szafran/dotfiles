@@ -16,7 +16,7 @@
 [commit]
 	gpgsign = true
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [pull]
 	rebase = true
 [url "git@github.com:"]
