@@ -5,6 +5,10 @@
 set -gx EDITOR hx
 set -gx BAT_THEME ansi
 
+# tmux - use a persistent socket path outside /tmp to survive macOS temp purges
+mkdir -p ~/.tmux/tmp
+set -gx TMUX_TMPDIR ~/.tmux/tmp
+
 # Gum theme (Everforest)
 set -gx GUM_CHOOSE_CURSOR_FOREGROUND "#a7c080"
 set -gx GUM_CHOOSE_SELECTED_FOREGROUND "#a7c080"
