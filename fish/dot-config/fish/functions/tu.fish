@@ -1,5 +1,6 @@
 function tu -d "Update terminal setup"
     tu_sym
+    mkdir -p ~/.tmux/tmp
 
     cd $DOTFILES_DIR
 
