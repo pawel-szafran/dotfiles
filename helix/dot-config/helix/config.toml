@@ -68,6 +68,12 @@ r = [
     ":redraw",
     ":reload-all"
 ]
+R = [
+    ":write-all",
+    ":insert-output scooter --no-stdin -s '%{selection}' >/dev/tty",
+    ":redraw",
+    ":reload-all"
+]
 
 # Git
 [keys.normal.space.x.g]
