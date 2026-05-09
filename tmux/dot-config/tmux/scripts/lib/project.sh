@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Shared functions for project scripts
 
+SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+source "$SCRIPT_DIR/ui.sh"
+
 get_current_project_name() {
     local parent_dir=$(dirname "$PWD")
     local parent_name=$(basename "$parent_dir")

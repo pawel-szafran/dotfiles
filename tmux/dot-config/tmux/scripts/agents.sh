@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+SCRIPT_DIR="$(dirname "$0")"
+source "$SCRIPT_DIR/lib/ui.sh"
+
 AGENT_PATTERNS="claude|droid"
 STATE_DIR="$HOME/.local/state/agents"
 RED='\033[31m'
@@ -49,9 +52,7 @@ done < <(tmux list-panes -a -F "#{pane_pid}|#{session_name}|#{window_index}|#{wi
     awk -F'|' -v pat="^(${AGENT_PATTERNS})$" '$6 ~ pat')
 
 if [[ -z "$lines" ]]; then
-    echo "No agents running"
-    sleep 1
-    exit 0
+    bail "No agents running" 0
 fi
 
 selected=$(echo -n "$lines" | sort |

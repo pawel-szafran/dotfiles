@@ -11,11 +11,7 @@ selected=$(printf "notes\ndotfiles" | fzf --height=100% --reverse --header "Open
 case "$selected" in
     notes)
         target_dir=$(zoxide query notes 2>/dev/null)
-        [[ -z "$target_dir" ]] && {
-            echo "notes not found in zoxide"
-            sleep 1
-            exit 1
-        }
+        [[ -z "$target_dir" ]] && bail "notes not found in zoxide"
         session_name="notes"
 
         if tmux has-session -t="$session_name" 2>/dev/null; then
@@ -39,11 +35,7 @@ case "$selected" in
         ;;
     dotfiles)
         target_dir=$(zoxide query dotfiles 2>/dev/null)
-        [[ -z "$target_dir" ]] && {
-            echo "dotfiles not found in zoxide"
-            sleep 1
-            exit 1
-        }
+        [[ -z "$target_dir" ]] && bail "dotfiles not found in zoxide"
         session_name="dotfiles"
 
         open_project_session "$session_name" "$target_dir"

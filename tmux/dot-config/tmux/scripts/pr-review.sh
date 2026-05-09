@@ -11,35 +11,19 @@ url=$(gum input --header "Review PR" --placeholder "$clipboard")
 [[ -z "$url" ]] && exit 0
 
 # Step 2: Validate and parse PR URL
-[[ "$url" =~ github\.com/.+/.+/pull/[0-9]+ ]] || {
-    echo "Invalid PR URL"
-    sleep 1
-    exit 1
-}
+[[ "$url" =~ github\.com/.+/.+/pull/[0-9]+ ]] || bail "Invalid PR URL"
 
 repo=$(echo "$url" | sed -E 's|.*/([^/]+)/pull/[0-9]+.*|\1|')
 pr_number=$(echo "$url" | sed -E 's|.*/pull/([0-9]+).*|\1|')
 
-[[ -z "$repo" || -z "$pr_number" ]] && {
-    echo "Invalid PR URL"
-    sleep 1
-    exit 1
-}
+[[ -z "$repo" || -z "$pr_number" ]] && bail "Invalid PR URL"
 
 # Step 3: Resolve branch name via gh
-branch=$(gh pr view "$url" --json headRefName --jq '.headRefName') || {
-    echo "Failed to fetch PR info"
-    sleep 1
-    exit 1
-}
+branch=$(gh pr view "$url" --json headRefName --jq '.headRefName') || bail "Failed to fetch PR info"
 
 # Step 4: Find project directory via zoxide
 matches=$(zoxide query -l "$repo" 2>/dev/null | rg -v '\.worktrees' || true)
-[[ -z "$matches" ]] && {
-    echo "No project found for '$repo'"
-    sleep 1
-    exit 1
-}
+[[ -z "$matches" ]] && bail "No project found for '$repo'"
 
 match_count=$(echo "$matches" | wc -l | tr -d ' ')
 if [[ "$match_count" -eq 1 ]]; then
@@ -55,11 +39,7 @@ wt switch "pr:$pr_number" --yes --no-cd
 
 # Step 6: Get worktree path and create session
 target_dir=$(wt list --format=json | jq -r --arg b "$branch" '.[] | select(.branch == $b) | .path')
-[[ -z "$target_dir" ]] && {
-    echo "Failed to find worktree for '$branch'"
-    sleep 1
-    exit 1
-}
+[[ -z "$target_dir" ]] && bail "Failed to find worktree for '$branch'"
 session_name=$(basename "$target_dir")
 
 # Step 7: Create or attach to session
