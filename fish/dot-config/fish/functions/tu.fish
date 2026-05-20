@@ -32,6 +32,9 @@ function tu -d "Update terminal setup"
     end
     ya pkg upgrade
 
+    tu_log "Updating Plannotator"
+    curl -fsSL https://plannotator.ai/install.sh | bash -s -- --verify-attestation
+
     cd -
     exec fish
 end
