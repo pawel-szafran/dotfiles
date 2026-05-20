@@ -19,7 +19,7 @@ function tu -d "Update terminal setup"
     end
 
     tu_log "Updating cargo"
-    for pkg in amber ccase
+    for pkg in ccase
         cargo install $pkg
     end
 
