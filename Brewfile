@@ -70,8 +70,9 @@ brew "superhtml"
 brew "vscode-langservers-extracted"
 
 # Apps
-cask "ghostty@tip"
+cask "bruno"
 cask "docker-desktop"
+cask "ghostty@tip"
 cask "imageoptim"
 cask "tableplus"
 
