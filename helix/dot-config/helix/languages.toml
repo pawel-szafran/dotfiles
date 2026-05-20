@@ -1,14 +1,15 @@
 [language-server]
 expert = { command = "/Users/pawel/projects/elixir/expert/apps/expert/_build/prod/rel/plain/bin/start_expert", args = ["--stdio"] }
+dexter = { command = "dexter", args = ["lsp"] }
 
 [[language]]
 name = "elixir"
-language-servers = [ "expert" ]
+language-servers = [ "dexter" ]
 text-width = 100
 
 [[language]]
 name = "heex"
-language-servers = [ "expert" ]
+language-servers = [ "dexter" ]
 text-width = 100
 
 [[language]]
