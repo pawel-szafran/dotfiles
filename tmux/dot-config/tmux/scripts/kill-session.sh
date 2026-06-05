@@ -35,6 +35,7 @@ fi
 
 # Remove worktree (interactive, needs terminal alive)
 if [[ "$delete_worktree" == true ]]; then
+    cd "$repo_dir"
     flags=()
     while true; do
         output_file=$(mktemp)
