@@ -1,2 +1,5 @@
 gui:
   returnImmediately: true
+  theme:
+    selectedLineBgColor:
+      - '#404c51'
