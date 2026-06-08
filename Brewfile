@@ -77,5 +77,6 @@ cask "imageoptim"
 cask "tableplus"
 
 # AI
-cask "claude-code"
 brew "agent-browser"
+brew "rtk"
+cask "claude-code"
