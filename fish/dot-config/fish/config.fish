@@ -47,8 +47,7 @@ if status is-interactive
     abbr -a o open
     abbr -a j just
     abbr -a g lazygit
-    abbr -a lzg lazygit
-    abbr -a lzd lazydocker
+    abbr -a d lazydocker
     abbr -a t tmux
     abbr -a calc fend
 
@@ -58,7 +57,6 @@ if status is-interactive
     abbr -a wtr wt remove
 
     abbr -a c claude
-    abbr -a d droid
     abbr -a p plannotator
     abbr -a pa plannotator annotate
 
