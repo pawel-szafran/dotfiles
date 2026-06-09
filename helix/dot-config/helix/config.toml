@@ -64,13 +64,13 @@ y = ":echo %sh{echo -n '%{buffer_name}' | pbcopy; pbpaste}"
 Y = ":echo %sh{echo -n '%{buffer_name}:%{cursor_line}' | pbcopy; pbpaste}"
 r = [
     ":write-all",
-    ":insert-output scooter --no-stdin >/dev/tty",
+    ":insert-output tmux display-popup -E -w 90%% -h 90%% -- scooter --no-stdin",
     ":redraw",
     ":reload-all"
 ]
 R = [
     ":write-all",
-    ":insert-output scooter --no-stdin -s '%{selection}' >/dev/tty",
+    ":insert-output tmux display-popup -E -w 90%% -h 90%% -- scooter --no-stdin -f -s '%{selection}'",
     ":redraw",
     ":reload-all"
 ]
