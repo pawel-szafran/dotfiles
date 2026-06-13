@@ -42,13 +42,13 @@ if status is-interactive
     alias la='ll -a'
     alias lt='eza -T --color=always --group-directories-first --icons'
     alias lta='lt -a'
-    alias top='btop'
 
     abbr -a o open
-    abbr -a j just
+    abbr -a t tmux
     abbr -a g lazygit
     abbr -a d lazydocker
-    abbr -a t tmux
+    abbr -a j just
+    abbr -a top btop
     abbr -a calc fend
 
     abbr -a wts wt switch
