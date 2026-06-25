@@ -5,7 +5,7 @@ function tu -d "Update terminal setup"
 
     tu_log "Updating brew"
     brew update
-    brew upgrade
+    brew upgrade --yes
     brew bundle
     brew autoremove
     brew cleanup
