@@ -27,13 +27,24 @@ fi
 cd "$project_dir"
 worktrees_json=$(wt list --format=json 2>/dev/null || echo "[]")
 branches=$(echo "$worktrees_json" | jq -r '.[].branch // empty' | sort)
+# Show "branch (dir)" when worktree dir name differs from branch name
+display_list=$(echo "$worktrees_json" | jq -r '
+  .[] | (.branch // empty) as $b | (.path | split("/") | last) as $d |
+  if $b != "" then "\($d) (\($b))" else empty end
+' | sort)
 
 # Step 5: Select branch or type new name
-result=$(echo "$branches" | fzf --height=100% --reverse --header "Select or create a worktree" --header-first --print-query || true)
+result=$(echo "$display_list" | fzf --height=100% --reverse --header "Select or create a worktree" --header-first --print-query || true)
 query_line=$(echo "$result" | sed -n '1p')
 selection_line=$(echo "$result" | sed -n '2p')
-name="${selection_line:-$query_line}"
-[[ -z "$name" ]] && exit 0
+raw="${selection_line:-$query_line}"
+[[ -z "$raw" ]] && exit 0
+# If format is "dir (branch)", extract branch; otherwise use raw as typed new name
+if echo "$raw" | grep -qE '\(.*\)$'; then
+    name=$(echo "$raw" | sed 's/^.* (\(.*\))$/\1/')
+else
+    name="$raw"
+fi
 
 # Step 6: Switch to worktree (create if needed)
 if echo "$branches" | rg -qxF "$name"; then
